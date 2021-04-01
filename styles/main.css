@@ -1,5 +1,6 @@
 body{
 	font-family: calibri;
+	overflow-y: scroll;
 }
 header{
 	position: relative;
@@ -89,8 +90,7 @@ nav{
 }
 .allRestaurants{
 	border-right: 1px solid #D1D1D1;
-	max-width: 60%;
-	min-width:650px;
+	width: 60%;
 }
 .recommended{
 	min-width: 100px;
@@ -165,7 +165,8 @@ nav{
 	display: none;
 	font-size: 25px;
 	text-align: center;
-	width: 100%;
+	width: 80%;
+	margin-left: 10%;
 }
 .loadingIm{
 	width: 40px;
