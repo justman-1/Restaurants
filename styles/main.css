@@ -1,0 +1,185 @@
+body{
+	font-family: calibri;
+}
+header{
+	position: relative;
+	min-width: 700px;
+	max-width: 100%;
+	display: flex;
+	font-size: 20px;
+	margin-top: 20px;
+}
+.headerEmpty{
+	width: 20%;
+}
+.searchInp{
+	width: 39%;
+	box-shadow: 0px 0px 10px #BDBDBD;
+	border: 0px solid black;
+	font-size: 20px;
+	padding: 10px;
+	border-radius: 5px;
+}
+.searchBut{
+	width: 30px;
+	filter: invert(1);
+}
+.searchDiv{
+	width: 30px;
+	height: 30px;
+	padding: 10px;
+	background: #FF2941;
+	position: relative;
+	left: -5px;
+	cursor: pointer;
+	border-radius: 4px;
+	box-shadow: 0px 0px 10px #BDBDBD;
+}
+input:focus{
+	border: 0px solid black;
+	outline: none;
+}
+.logInBut{
+	padding: 10px 15px 10px 15px;
+	border: 1px solid #BABABA;
+	float: right;
+	border-radius: 5px;
+	margin-left: 10px;
+	color: gray;
+	cursor: pointer;
+	transition: all 0.2s ease;
+}
+.logInBut:hover{
+	box-shadow: 0px 0px 4px gray;
+}
+.signUpBut{
+	float: right;
+	background: #FF2941;
+	border-radius: 5px;
+	padding: 10px 15px 10px 15px;
+	margin-left: 10px;
+	color: white;
+	cursor: pointer;
+	transition: all 0.2s ease;
+}
+.signUpBut:hover{
+	box-shadow: 0px 0px 4px gray;
+}
+.log{
+	width: 39%;
+}
+.mainSect{
+	width: 100%;
+	margin-top: 20px;
+	border-top: 1px solid #D1D1D1;
+	display: flex;
+}
+nav{
+	width: 15%;
+	border-right: 1px solid #D1D1D1;
+	padding: 25px;
+}
+.countriesName{
+	font-weight: 600;
+	font-size: 20px;
+}
+.cuisine{
+	display: flex;
+	margin-top: 10px;
+}
+.allRestaurants{
+	border-right: 1px solid #D1D1D1;
+	max-width: 60%;
+	min-width:650px;
+}
+.recommended{
+	min-width: 100px;
+	background: #F0F0F0;
+	padding: 0px 15px 0px 15px;
+	border-radius: 4px;
+	overflow: hidden;
+	height: 40px;
+	transition: all 0.4s ease;
+	margin: 10px auto;
+}
+.recommended:hover{
+	height: 70px;
+}
+.recPart{
+	text-align: center;
+	margin-top: 10px;
+	cursor: pointer;
+	font-weight: 500;
+	border-radius: 4px;
+}
+.recPart:hover{
+	font-weight: 600;
+}
+.restaurant{
+	width: 80%;
+	margin-left: 10%;
+	margin-top: 20px;
+	border-radius: 5px;
+	border: 1px solid #D1D1D1;
+	display: flex;
+	transition: all 0.3s ease;
+}
+.restaurant:hover{
+	box-shadow: 0px 0px 10px #BDBDBD;
+}
+.restImg{
+	width: 100%;
+	border-radius: 5px;
+}
+.restImgDiv{
+	width: 40%;
+	margin: 30px;
+}
+.resDesc{
+	width: 50%;
+	margin: 30px 10px 10px 30px;
+}
+.resName{
+	font-weight: 600;
+	font-size: 20px;
+}
+.resRating{
+	display: flex;
+}
+.ratingNum{
+	font-size: 19px;
+	color: #EBCD00;
+}
+.ratingStar{
+	width: 20px;
+	margin-left: 5px;
+}
+.cuisineName{
+	font-weight: 600;
+	margin-left: 1px;
+}
+.resMore{
+	margin-top: 10px;
+}
+.loading{
+	display: none;
+	font-size: 25px;
+	text-align: center;
+	width: 100%;
+}
+.loadingIm{
+	width: 40px;
+	margin-top: 40px;
+	animation: loading 0.8s linear infinite;
+	transition: all 1.5s ease ;
+}
+@keyframes loading{
+	0%{transform: rotate(359.99deg);}
+	100%{transform: rotate(0deg);}
+}
+.noRestaurants{
+	font-size: 30px;
+	color: gray;
+	text-align: center;
+	margin-top: 40px;
+}

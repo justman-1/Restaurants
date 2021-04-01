@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="/main.css">
+	<title>Main</title>
+</head>
+<body>
+	<header>
+		<div class='headerEmpty'></div>
+		<input type="text" class='searchInp' placeholder="Seacrh restaurant...">
+		<div class="searchDiv">
+			<img src="/search.svg" class='searchBut'>
+		</div>
+		<div class='log'>
+			<div class='signUpBut'>Sign up</div>
+			<div class='logInBut'>Log in</div>
+		</div>
+	</header>
+	<section class='mainSect'>
+
+		<nav>
+			<div class='countriesName'>Countries</div>
+			<div class='allCuisines'>
+				<div class='cuisine'>
+					<input type="checkbox" class='asianCheck'>
+					<div class='asian'>Asian</div>
+				</div>
+				<div class='cuisine'>
+					<input type="checkbox" class='italianCheck'>
+					<div class='italian'>Italian</div>
+				</div>
+				<div class='cuisine'>
+					<input type="checkbox" class='europeanCheck'>
+					<div class='european'>European</div>
+				</div>
+				<div class='cuisine'>
+					<input type="checkbox" class='chineseCheck'>
+					<div class='chinese'>Сhinese</div>
+				</div>
+				<div class='cuisine'>
+					<input type="checkbox" class='russianCheck'>
+					<div class='russian'>Russian</div>
+				</div>
+				<div class='cuisine'>
+					<input type="checkbox" class='belarusianCheck'>
+					<div class='belarusian'>Belarusian</div>
+				</div>
+				<div class='cuisine'>
+					<input type="checkbox" class='japaneseCheck'>
+					<div class='japanese'>Japanese</div>
+				</div>
+				<div class='cuisine'>
+					<input type="checkbox" class='frenchCheck'>
+					<div class='french'>French</div>
+				</div>
+				<div class='cuisine'>
+					<input type="checkbox" class='turkishCheck'>
+					<div class='turkish'>Turkish</div>
+				</div>
+			</div>
+		</nav>
+
+		<section class='allRestaurants'>
+			<div class="loading">
+				<img src="/imgs/reset.svg" class='loadingIm'>
+			</div>
+			<div class='restaurants'>
+				
+			</div>
+		</section>
+
+		<div class='recommended'>
+				<div class='recPart all'>All</div>
+				<div class='recPart rec'>Recommended</div>
+		</div>
+	</section>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src='/main.js'></script></body>
+</html>
