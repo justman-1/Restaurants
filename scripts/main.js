@@ -293,6 +293,8 @@ $('.recommended').click((e)=>{
 		$('input[type=checkbox]').each(function(){
             this.checked = false; 
         }); 
+        $('.all').html("All")
+		$('.rec').html("Recommended")
         filter.forEach(e=>{
         	e[1] = false
         })
