@@ -9,6 +9,10 @@ header{
 	display: flex;
 	font-size: 20px;
 	margin-top: 20px;
+	transition: all 0.1s ease;
+}
+section{
+	transition: all 0.1s ease;
 }
 .headerEmpty{
 	width: 20%;
@@ -36,7 +40,7 @@ header{
 	border-radius: 4px;
 	box-shadow: 0px 0px 10px #BDBDBD;
 }
-input:focus{
+.searchInp:focus{
 	border: 0px solid black;
 	outline: none;
 }
@@ -93,17 +97,9 @@ nav{
 	width: 60%;
 }
 .recommended{
-	min-width: 100px;
-	background: #F0F0F0;
-	padding: 0px 15px 0px 15px;
-	border-radius: 4px;
-	overflow: hidden;
-	height: 40px;
-	transition: all 0.4s ease;
-	margin: 10px auto;
-}
-.recommended:hover{
-	height: 70px;
+	width: 24%;
+	font-weight: 600;
+	font-size: 20px;
 }
 .recPart{
 	text-align: center;
@@ -183,4 +179,183 @@ nav{
 	color: gray;
 	text-align: center;
 	margin-top: 40px;
+}
+.additionalName{
+	font-weight: 600;
+	font-size: 20px;
+	margin-top: 30px;
+}
+.additional{
+	display: flex;
+	margin-top: 10px;
+}
+.recommendedName{
+	text-align: center;
+	margin-top: 10px;
+	font-weight: 600;
+	width: 100%;
+}
+.recBlock{
+	width: 80%;
+	margin-left: 10%;
+	margin-top: 20px;
+	margin-bottom: 20px;
+	border-radius: 4px;
+	border: 1px solid #D1D1D1;
+	font-size: 15px;
+	transition: all 0.2s ease;
+}
+.recBlock:hover{
+	box-shadow: 0px 0px 4px gray;
+}
+.recName{
+	text-align: center;
+	font-weight: 600;
+}
+.recImg{
+	width: 80%;
+	margin: 10px 10% 10px 10%;
+	border-radius: 5px;
+}
+.recRating{
+	display: flex;
+	margin-left: 10%;
+	margin-bottom: 5%;
+	width: 90%;
+}
+.recSpan{
+	font-weight: 600;
+	color: #EBCD00;
+}
+.recStar{
+	width: 15px;
+	margin-left: 5px;
+}
+.loading2{
+	display: none;
+	font-size: 25px;
+	text-align: center;
+	width: 80%;
+	margin-left: 10%;
+}
+.loadingIm2{
+	width: 40px;
+	margin-top: 40px;
+	animation: loading 0.8s linear infinite;
+	transition: all 1.5s ease ;
+}
+.openRest{
+	display: none;
+}
+
+
+.signupForm{
+	width: 300px;
+	position: fixed;
+	z-index: 2;
+	margin-top: -700px;
+	padding: 20px;
+	background: #F5F5F5;
+	border-radius: 5px;
+	transition: all 0.4s ease;
+}
+.names{
+	display: flex;
+}
+.namesPart{
+	width: 49%;
+	height: 20px;
+	font-size: 16px;
+	margin-right: 1%;
+}
+.formInp{
+	margin-top: 7px;
+	width: 96.5%;
+	height: 20px;
+	font-size: 16px;
+}
+.signupSubmit{
+	margin-top: 7px;
+	width: 99%;
+	font-size: 16px;
+	background: #FF2941;
+	border-radius: 4px;
+	color: white;
+	padding: 10px;
+	border: 0px solid white;
+	opacity: 0.5;
+}
+.signupError{
+	font-size: 14px;
+	color: red;
+	text-align: center;
+	margin-top: 10px;
+}
+.signupSubmit:focus{
+	border: 0px solid black;
+	outline: none;
+}
+.signupBack{
+	color: red;
+	margin-bottom: 10px;
+	cursor: pointer;
+}
+.loading3{
+	display: none;
+	font-size: 25px;
+	text-align: center;
+	width: 80%;
+	margin-left: 10%;
+}
+
+
+.loginForm{
+	width: 300px;
+	position: fixed;
+	z-index: 2;
+	margin-top: -700px;
+	padding: 20px;
+	background: #F5F5F5;
+	border-radius: 5px;
+	transition: all 0.4s ease;
+}
+.loginBack{
+	color: red;
+	margin-bottom: 10px;
+	cursor: pointer;
+}
+.loginSubmit{
+	margin-top: 7px;
+	width: 99%;
+	font-size: 16px;
+	background: #FF2941;
+	border-radius: 4px;
+	color: white;
+	padding: 10px;
+	border: 0px solid white;
+	opacity: 0.5;
+}
+.loginSubmit:focus{
+	border: 0px solid black;
+	outline: none;
+}
+.loginError{
+	color: red;
+	margin-top: 10px;
+	text-align: center;
+}
+.loading4{
+	display: none;
+	font-size: 25px;
+	text-align: center;
+	width: 80%;
+	margin-left: 10%;
+}
+
+.myImage{
+	display: none;
+}
+.myImageImg{
+	width: 45px;
+	border-radius: 45px;
 }

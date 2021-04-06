@@ -1,0 +1,617 @@
+body{
+	font-family: calibri;
+	overflow-y: scroll;
+}
+header{
+	display: flex;
+	border-bottom: 1px solid #BABABA;
+	padding-bottom: 15px;
+	padding-top: 15px
+}
+.headerEmpty{
+	width: 60%;
+	display: flex;
+}
+input:focus{
+	border: 0px solid black;
+	outline: none;
+}
+.logInBut{
+	padding: 10px 15px 10px 15px;
+	border: 1px solid #BABABA;
+	float: right;
+	border-radius: 5px;
+	margin-left: 10px;
+	color: gray;
+	cursor: pointer;
+	transition: all 0.2s ease;
+}
+.logInBut:hover{
+	box-shadow: 0px 0px 4px gray;
+}
+.signUpBut{
+	float: right;
+	background: #FF2941;
+	border-radius: 5px;
+	padding: 10px 15px 10px 15px;
+	margin-left: 10px;
+	color: white;
+	cursor: pointer;
+	transition: all 0.2s ease;
+}
+.signUpBut:hover{
+	box-shadow: 0px 0px 4px gray;
+}
+.log{
+	width: 39%;
+}
+.back{
+	width: 40px;
+	background: white
+}
+.backText{
+	color: red;
+	overflow: hidden;
+	position: relative;;
+	top: 9px;
+	left: -50px;
+	opacity: 0;
+	z-index: -1;
+	transition: all 0.6s ease;
+}
+.mainSect{
+	display: flex;
+}
+.recommended{
+	width: 24%;
+	font-weight: 600;
+	font-size: 20px;
+}
+.recommendedName{
+	text-align: center;
+	margin-top: 10px;
+	font-weight: 600;
+	width: 100%;
+}
+.loading2{
+	display: none;
+	font-size: 25px;
+	text-align: center;
+	width: 80%;
+	margin-left: 10%;
+}
+@keyframes loading{
+	0%{transform: rotate(359.99deg);}
+	100%{transform: rotate(0deg);}
+}
+.loadingIm2{
+	width: 40px;
+	margin-top: 40px;
+	animation: loading 0.8s linear infinite;
+	transition: all 1.5s ease ;
+}
+.recBlock{
+	width: 80%;
+	margin-left: 10%;
+	margin-top: 20px;
+	margin-bottom: 20px;
+	border-radius: 4px;
+	border: 1px solid #D1D1D1;
+	font-size: 15px;
+	transition: all 0.2s ease;
+}
+.recBlock:hover{
+	box-shadow: 0px 0px 4px gray;
+}
+.recName{
+	text-align: center;
+	font-weight: 600;
+}
+.recImg{
+	width: 80%;
+	margin: 10px 10% 10px 10%;
+	border-radius: 5px;
+}
+.recRating{
+	display: flex;
+	margin-left: 10%;
+	margin-bottom: 5%;
+	width: 90%;
+}
+.recSpan{
+	font-weight: 600;
+	color: #EBCD00;
+}
+.recStar{
+	width: 15px;
+	margin-left: 5px;
+}
+
+.mainSect{
+	display: flex;
+}
+
+.restaurantInfo{
+	width: 75%;
+	margin-top: 40px;
+}
+
+.restImgsAndLittleInfo{
+	width: 100%;
+	display: flex;
+}
+
+.restImgs{
+	width: 45%;
+	display: flex;
+	margin-left: 5%;
+}
+.toggleArrowLeft{
+	width: 30px;
+	transform: rotate(180deg);
+	position: relative;
+	opacity: 0.3;
+}
+.toggleArrowLeft:hover{
+	opacity: 1;
+}
+.restInfoImg{
+	height: 200px;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	border-radius: 10px;
+	transition: all 0.1s;
+}
+.restInfoImgBl{
+	width: 80%;
+}
+.toggleArrowRight{
+	width: 30px;
+	position: relative;
+	opacity: 0.3;
+}
+.toggleArrowRight:hover{
+	opacity: 1;
+}
+
+.restLittleInfo{
+	width: 49%;
+
+}
+.restInfoName{
+	font-size: 35px;
+	margin: 10px 0px 0px 60px;
+	font-weight: 600;
+}
+.restInfoRating{
+	display: flex;
+	margin-left: 60px;
+	margin-top: 10px;
+}
+.ratingInfoNum{
+	font-size: 30px;
+	color: #EBCD00;
+}
+.ratingInfoStar{
+	width: 30px;
+	margin-left: 4px;
+}
+.restInfoCuisine{
+	font-size: 20px;
+	margin-left: 60px;
+	margin-top: 10px;
+}
+.restInfoCusineSp{
+	font-weight: 600
+}
+.restInfoAddress{
+	margin-left: 60px;
+	margin-top: 10px;
+	font-size: 20px;
+}
+.restInfoAddressSp{
+	font-weight: 600;
+}
+
+
+.moreInfo{
+	width: 100%;
+}
+.restInfoDesc{
+	font-size: 17px;
+	padding: 40px;
+}
+.dishes{
+	width: 100%;
+}
+.simpleDishesName{
+	margin: 5px 0% 20px 20%;
+	font-size: 23px;
+	font-weight: 600;
+}
+.bestDishesName{
+	margin: 5px 0% 20px 20%;
+	font-size: 23px;
+	font-weight: 600;
+}
+.deliveryAndTakeout{
+	display: flex;
+	font-size: 20px;
+	margin-left: 60px;
+	margin-top: 10px;
+}
+.deliveryHave{
+	width: 50%;
+	display: flex;
+}
+.deliveryImg{
+	width: 25px;
+	margin-left: 10px;
+}
+.takeoutHave{
+	display: flex;
+}
+.takeoutImg{
+	width: 25px;
+	margin-left: 10px;
+}
+.rateName{
+	font-size: 30px;
+	font-weight: 600;
+	text-align: center;
+}
+.reviewsName{
+	text-align: center;
+	font-size: 23px;
+	font-weight: 600;
+	margin-top: 40px;
+}
+.review{
+	width: 80%;
+	margin-left: 10%;
+	margin-top: 30px;
+	border-radius: 5px;
+	border: 1px solid #BABABA;
+	padding-bottom: 20px;
+}
+.reviewStars{
+	margin: 10px 0px 10px 10px;
+}
+.reviewName{
+	margin-left: 70px;
+	font-size: 20px;
+	font-weight: 600;
+}
+.rewStar{
+	width: 15px;
+	margin-left: 5px;
+}
+.reviewText{
+	margin: 10px 30px 10px 30px;
+}
+.rewDate{
+	float: right;
+	margin-right: 30px;
+	font-size: 13px;
+}
+
+
+
+
+.signupForm{
+	width: 300px;
+	position: fixed;
+	z-index: 2;
+	margin-top: -700px;
+	padding: 20px;
+	background: #F5F5F5;
+	border-radius: 5px;
+	transition: all 0.4s ease;
+}
+.names{
+	display: flex;
+}
+.namesPart{
+	width: 49%;
+	height: 20px;
+	font-size: 16px;
+	margin-right: 1%;
+}
+.formInp{
+	margin-top: 7px;
+	width: 96.5%;
+	height: 20px;
+	font-size: 16px;
+}
+.signupSubmit{
+	margin-top: 7px;
+	width: 99%;
+	font-size: 16px;
+	background: #FF2941;
+	border-radius: 4px;
+	color: white;
+	padding: 10px;
+	border: 0px solid white;
+	opacity: 0.5;
+}
+.signupError{
+	font-size: 14px;
+	color: red;
+	text-align: center;
+	margin-top: 10px;
+}
+.signupSubmit:focus{
+	border: 0px solid black;
+	outline: none;
+}
+.signupBack{
+	color: red;
+	margin-bottom: 10px;
+	cursor: pointer;
+}
+.loading3{
+	display: none;
+	font-size: 25px;
+	text-align: center;
+	width: 80%;
+	margin-left: 10%;
+}
+
+
+.loginForm{
+	width: 300px;
+	position: fixed;
+	z-index: 2;
+	margin-top: -700px;
+	padding: 20px;
+	background: #F5F5F5;
+	border-radius: 5px;
+	transition: all 0.4s ease;
+}
+.loginBack{
+	color: red;
+	margin-bottom: 10px;
+	cursor: pointer;
+}
+.loginSubmit{
+	margin-top: 7px;
+	width: 99%;
+	font-size: 16px;
+	background: #FF2941;
+	border-radius: 4px;
+	color: white;
+	padding: 10px;
+	border: 0px solid white;
+	opacity: 0.5;
+}
+.loginSubmit:focus{
+	border: 0px solid black;
+	outline: none;
+}
+.loginError{
+	color: red;
+	margin-top: 10px;
+	text-align: center;
+}
+.loading4{
+	display: none;
+	font-size: 25px;
+	text-align: center;
+	width: 80%;
+	margin-left: 10%;
+}
+
+.myImage{
+	display: none;
+}
+.myImageImg{
+	width: 45px;
+	border-radius: 45px;
+}
+
+
+.simpleDishes{
+	display: grid;
+	grid-gap: 10px;
+	width: 80%;
+	grid-template-columns: repeat(auto-fill, minmax(200px, 200px));
+	margin-left: 10%;
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+.simpleDishBl{
+	border-radius: 5px;
+	border: 1px solid #BABABA;
+}
+.simpleDishImg{
+	width: 80%;
+	margin-left: 10%;
+	margin-top: 15px;
+	margin-bottom: 15px;
+	border-radius: 5px;
+}
+.simpleDishName{
+	font-size: 18px;
+	margin-bottom: 10px;
+	text-align: center;
+}
+.bestDishes{
+	display: grid;
+	grid-gap: 10px;
+	width: 80%;
+	grid-template-columns: repeat(auto-fill, minmax(200px, 200px));
+	margin-left: 10%;
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+
+.addRestaurant{
+	width: 40px;
+	float: right;
+	cursor: pointer;
+	transition: all 0.2s ease;
+}
+.addRestaurant:hover{
+	transform: scale(1.2)
+}
+.addRestText{
+	width: 220px;
+	color: red;
+	position: relative;
+	top: -30px;
+	left: -80px;
+	opacity: 0;
+	transition: all 0.2s ease;
+	text-align: center;
+}
+
+
+.showDish{
+	width: 700px;
+	padding: 20px 20px 50px 20px;
+	display: flex;
+	position: fixed;
+	background: white;
+	left: auto;
+	border-radius: 10px;
+	top: -110%;
+	box-shadow: 0px 0px 15px #D1D1D1;
+	z-index: 4;
+	transition: all 0.4s ease
+}
+.showDishImg{
+	width: 100%;
+	display: block;
+	border-radius: 5px;
+}
+.showDishImgBl{
+	width: 50%;
+	margin-left: 5%;
+	margin-right: 5%;
+}
+.showDishName{
+	font-size: 25px;
+	font-weight: 600;
+	margin-top: 40px;
+	margin-right: 30px;
+}
+.showDishDesc{
+	margin-top: 20px;
+	margin-right: 30px;
+}
+.cross2{
+	width: 40px;
+	position: relative;
+	left: -50px;
+	top: -10px;
+	cursor: pointer;
+}
+
+.rateFiveStars{
+	display: flex;
+	margin-top: 20px;
+	width: 40%;
+	position: relative;
+	left: 20%;
+	top: 20px;
+}
+.rateStar{
+	width: 25px;
+	height: 25px;
+	margin-left: 0px;
+	cursor: pointer;
+}
+.reviewAdd{
+	background: white;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	width: 50%;
+	border-radius: 5px;
+	box-shadow: 0px 0px 10px #C4C4C4;
+	padding: 30px;
+	margin-top: 30px;
+	transition: all 0.5s linear
+}
+.textAndStars{
+	display: flex;
+}
+.reviewTextAdd{
+	width: 50%;
+	height: 100px;
+	margin: 0px 5% 0px 0%;
+	resize: none;
+	border-radius: 15px;
+	border: 1px solid red;
+	padding: 10px;
+}
+.reviewTextAdd:focus{
+	outline: none;
+}
+.reviewImages1{
+	display: grid;
+	grid-gap: 10px;
+	grid-template-columns: repeat(auto-fill, minmax(60px, 60px));
+}
+.reviewImageAdd{
+	width: 60px;
+	margin-top: 20px;
+	margin-left: 30px;
+	opacity: 0.3;
+	cursor: pointer;
+}
+.addReviewBut{
+	display: block;
+	margin: auto;
+	text-align: center;
+	font-size: 20px;
+	color: white;
+	background: red;
+	border-radius: 15px;
+	padding: 10px 0px 10px 0px;
+	margin-top: 20px;
+	width: 130px;
+	cursor: pointer;
+	transition: all 0.3s linear
+}
+.addImageRev{
+	display: none;
+}
+.revImage{
+	width: 60px;
+	margin-top: 20px;
+	margin-left: 10px;
+	border-radius: 5px;
+	transition: all 0.3s linear
+}
+.deleteRevImage{
+	width: 20px;
+	height: 20px;
+	border-radius: 20px;
+	position: relative;
+	top: 10px;
+	right: 10px;
+	cursor: pointer;
+	box-shadow: 0px 0px 3px gray;
+}
+.textIfHaventAcc{
+	display: none;
+	font-size: 30px;
+	font-weight: 600;
+	text-align: center;
+	margin-top: 40px;
+}
+
+.reviewImages2{
+	display: grid;
+	grid-gap: 10px;
+	grid-template-columns: repeat(auto-fill, minmax(100px, 100px));
+}
+.revImage2{
+    width: 100px;
+	margin-top: 20px;
+	margin-left: 10px;
+	border-radius: 5px;
+	transition: all 0.3s linear
+}

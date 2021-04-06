@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="/profile.css">
+	<title>My profile</title>
+</head>
+<body>
+    <header>
+		<div class='headerEmpty'>
+			<a href='/'><img src="/arraw.png" class='back'></a>
+			<div class="backText">Back to the main page</div>
+		</div>
+		<div class='log'>
+			<div class='signUpBut'>Sign up</div>
+			<div class='logInBut'>Log in</div>
+		</div>
+		<div class="myImage">
+			<a href='feed'><img class="myImageImg" src='/user.png'></a>
+		</div>
+	</header>
+
+	<section class="myProfile">
+		<div class="profileInfo">
+			<div>
+				<img src="/user.png" class='profileImg'>
+				<label>
+					<img src="/pencil.png" class='changeImage'>
+					<input type="file" class='changeNameFile' style='display: none'>
+				</label>
+			</div>
+			<div>
+				<div class="profileName"><span class='profileNameSp'>Name</span><img src="/pencil.png" class='changeName'></div>
+			    <div class='profileEmailDiv'>Email: <span class='profileEmail'>asd@gmail.com</span></div>
+			</div>
+		</div>
+		<div class="myCollectionName">My collection:</div>
+		<div class="myCollection">
+
+		</div>
+		<div class='logOut'>Log out</div>
+	</section>
+
+	<div class="changeNameBl">
+		<img src="/arraw.png" class='backChange'>
+		<div class="changeForm">
+			<input type="text" placeholder="First name" class='firstNameCh'>
+		    <input type="text" placeholder="Last name" class='lastNameCh'>
+		    <div class='changeNameBut'>Save</div>
+		</div>
+	</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src='/profile.js'></script>
+</body>
+</html>

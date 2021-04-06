@@ -5,6 +5,34 @@
 	<title>Main</title>
 </head>
 <body>
+
+	<form class='signupForm' action='/signup' method='post'>
+		<div class="signupBack">Back</div>
+		<div class='names'>
+			<input type="text" name="firstName" placeholder="First name" class='namesPart' id='namesPart1'>
+		    <input type="text" name="lastName" placeholder="Last name" class='namesPart' id='namesPart2'>
+		</div>
+		<input type="email" name="email" placeholder="your_email@gmail.com" class='formInp' id='formInp1'>
+		<input type="password" name="password" placeholder="password" class='formInp' id='formInp2'>
+
+		<input type="button" value='Sign up' class='signupSubmit'>
+		<div class='signupError'></div>
+		<div class="loading3">
+			<img src="/imgs/reset.svg" class='loadingIm'>
+		</div>
+	</form>
+
+	<form class='loginForm' action='/login' method='post'>
+		<div class="loginBack">Back</div>
+		<input type="email" name="email" placeholder="your_email@gmail.com" class='formInp' id='formInp3'>
+		<input type="password" name="password" placeholder="password" class='formInp' id='formInp4'>
+		<input type="button" value='Log in' class='loginSubmit'>
+		<div class='loginError'></div>
+		<div class="loading4">
+			<img src="/imgs/reset.svg" class='loadingIm'>
+		</div>
+	</form>
+
 	<header>
 		<div class='headerEmpty'></div>
 		<input type="text" class='searchInp' placeholder="Seacrh restaurant...">
@@ -14,6 +42,9 @@
 		<div class='log'>
 			<div class='signUpBut'>Sign up</div>
 			<div class='logInBut'>Log in</div>
+		</div>
+		<div class="myImage">
+			<a href='feed'><img class="myImageImg" src='/user.png'></a>
 		</div>
 	</header>
 	<section class='mainSect'>
@@ -58,6 +89,17 @@
 					<div class='turkish'>Turkish</div>
 				</div>
 			</div>
+			<div class='additionalName'>Additional</div>
+			<div class='additionals'>
+				<div class="additional">
+					<input type="checkbox" class='deliveryCheck'>
+					<div class='delivery'>Delivery</div>
+				</div>
+				<div class="additional">
+					<input type="checkbox" class='takeoutCheck'>
+					<div class='takeout'>Takeout</div>
+				</div>
+			</div>
 		</nav>
 
 		<section class='allRestaurants'>
@@ -70,10 +112,16 @@
 		</section>
 
 		<div class='recommended'>
-				<div class='recPart all'>All</div>
-				<div class='recPart rec'>Recommended</div>
+			<div class='recommendedName'>Recommended</div>
+			<div class="loading2">
+				<img src="/imgs/reset.svg" class='loadingIm2'>
+			</div>
+			<div class="allRecommends">
+				
+			</div>
 		</div>
 	</section>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-<script src='/main.js'></script></body>
+<script src='/main.js'></script>
+<script src='forms.js'></script></body>
 </html>

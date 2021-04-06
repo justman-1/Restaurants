@@ -17,6 +17,11 @@ let filter = [
 	['French', false],
 	['Turkish', false]
 ]
+let deliveryFilter = [
+    ['Delivery', false],
+    ['Takeout', false]
+]
+
 function getAllRestaurants(){
 	let req = new XMLHttpRequest()
 	req.open('GET','/getRests', true)
@@ -61,6 +66,42 @@ function getAllRestaurants(){
 }
 getAllRestaurants()
 
+function getAllRecs(){
+	$('.loading2').css({'display': 'block'})
+	let req = new XMLHttpRequest()
+	req.open('GET','/getRecs', true)
+	req.send()
+
+	req.onreadystatechange = function(){
+		if (req.readyState != 4){
+			$('.loading2').css({'display': 'block'})
+		}
+		if(req.readyState === XMLHttpRequest.DONE && req.status === 200){
+        	$('.loading2').css({'display': 'none'})
+        	let res = JSON.parse(req.responseText)
+        	res.forEach(elem=>{
+		let color = '#EBCD00'
+		let display = 'block'
+		if(elem.rating === 0){
+			color = 'gray'
+			display = 'none'
+			elem.rating = 'no reviews'
+		}
+		$(".allRecommends").append(`
+		<div class="recBlock">
+					<div class="recName">${elem.name}</div>
+					<img src="${elem.images[0]}" class='recImg'>
+					<div style='font-weight: 500; margin-left: 10%'>cuisine:<span style='font-weight: 600'>${elem.cuisine}</span></div>
+					<div class="recRating">
+						<span class='recSpan' style="color: ${color}">${elem.rating}</span><img src="star.svg" class='recStar' style="display: ${display}">
+					</div>
+				</div>`)
+	})
+        }
+    }    
+}
+getAllRecs()
+
 $(window).scroll(()=>{
 	if(maxScrolled.scrolled > maxScrolled.level*400){
 		let x = 0
@@ -98,6 +139,7 @@ async function filt(){
 	let req = new XMLHttpRequest()
 	req.open("GET", '/getFilterRests', true)
 	req.setRequestHeader('filter', encode(JSON.stringify(filter)))
+	req.setRequestHeader('filter2', encode(JSON.stringify(deliveryFilter)))
 	req.send()
 
 	req.onreadystatechange = function(){
@@ -109,7 +151,7 @@ async function filt(){
 			let res = JSON.parse(req.responseText)
 	        $(".allRestaurants").append('<div class="restaurants"></div>')
 	        if(res.length == 0){
-	        	$(".restaurants").append('<div class="noRestaurants">There are not restaurants with this cuisine</div>')
+	        	$(".restaurants").append('<div class="noRestaurants">There are not restaurants for these categories</div>')
 	        }
 	        res.forEach(elem=>{
 	        	let color = '#EBCD00'
@@ -161,7 +203,6 @@ $(".allCuisines").click(e=>{
 				else{
 					return[elem[0], elem[1]]
 				}
-				filt()
 			})
 		}
 		filt()
@@ -236,71 +277,68 @@ document.addEventListener('keydown', function(e){
     }
 });
 
-$('.recommended').click((e)=>{
-	if(e.target.innerHTML == 'Recommended'){
-		$('input[type=checkbox]').each(function(){
-            this.checked = false; 
-        }); 
-        filter.forEach(e=>{
-        	e[1] = false
-        })
-		$('.all').html("Recommended")
-		$('.rec').html("All")
 
-		$(".restaurants").remove()
-	    $('.loading').css({'display': 'block'})
-	    let req = new XMLHttpRequest()
-	    req.open('GET', '/getRecs', true)
-	    req.send()
-
-	    req.onreadystatechange = function(){
-		    if (req.readyState != 4){
-			    $('.loading').css({'display': 'block'})
-		    }
-		    else if(req.readyState === XMLHttpRequest.DONE && req.status === 200){
-		    	let res = JSON.parse(req.responseText)
-		    	console.log(res)
-		    	$('.loading').css({'display': 'none'})
-			    $(".allRestaurants").append('<div class="restaurants"></div>')
-			    res.forEach(elem=>{
-	        	let color = '#EBCD00'
-		        let display = 'block'
-		        if(elem.rating === 0){
-			        color = 'gray'
-			        display = 'none'
-			        elem.rating = 'no reviews'
-		        }
-	        	$(".restaurants").append(`
-		    <div class='restaurant'>
-		    <div class='restImgDiv'>
-		        <img src="${elem.images[0]}" class='restImg'>
-		    </div>
-		    <div class="resDesc">
-		        <div class="resName">${elem.name}</div>
-		        <div class='resRating'>
-		            <div class="ratingNum" style='color: ${color}'>${elem.rating}</div>
-		            <img src="/star.svg" class='ratingStar' style='display: ${display}'>
-		        </div>
-		        <div class="resCuisine">Cuisine:<span class='cuisineName'>${elem.cuisine}</span></div>
-		        <div class="resMore">${elem.description.substr(0, 100)}...</div>
-		    </div>
-		    </div>`)
-	        })
-		    }
-	    }
+$(".additionals").click((e)=>{
+	if(e.target.type === 'checkbox'){
+		let name = e.target.parentNode.children[1].innerHTML
+		if(e.target.checked == true){
+			deliveryFilter = deliveryFilter.map((elem, index)=>{
+				if(elem[0] === name){
+					return [elem[0], true]
+				}
+				else{
+					return[elem[0], elem[1]]
+				}
+			})
+		}
+		else{
+			deliveryFilter = deliveryFilter.map((elem, index)=>{
+				if(elem[0] === name){
+					return [elem[0], false]
+				}
+				else{
+					return[elem[0], elem[1]]
+				}
+			})
+		}
+		filt()
 	}
-	else if(e.target.innerHTML == 'All'){
-		$('input[type=checkbox]').each(function(){
-            this.checked = false; 
-        }); 
-        $('.all').html("All")
-		$('.rec').html("Recommended")
-        filter.forEach(e=>{
-        	e[1] = false
-        })
-		$(".restaurants").remove()
-	    $(".allRestaurants").append('<div class="restaurants"></div>')
-	    getRestsTimes = 0
-		getAllRestaurants()
+
+})
+
+function openRestaurant(name){
+	localStorage.setItem('restaurant', name)
+	location.href = '/restaurant'
+}
+
+$(document).click((e)=>{
+	if(e.target.className == 'restaurant'){
+		let name = e.target.children[1].children[0].innerHTML
+		openRestaurant(name)
+	}
+	else if(e.target.parentNode.className == 'restaurant'){
+		let name = e.target.parentNode.children[1].children[0].innerHTML
+		openRestaurant(name)
+	}
+	else if(e.target.parentNode.parentNode.className == 'restaurant'){
+		let name = e.target.parentNode.parentNode.children[1].children[0].innerHTML
+		openRestaurant(name)
+	}
+	else if(e.target.parentNode.parentNode.parentNode.className == 'restaurant'){
+		let name = e.target.parentNode.parentNode.parentNode.children[1].children[0].innerHTML
+		openRestaurant(name)
+	}
+	else if(e.target.className == 'recBlock'){
+		let name = e.target.children[0].innerHTML
+		openRestaurant(name)
+	}
+	else if(e.target.parentNode.className == 'recBlock'){
+		let name = e.target.parentNode.children[0].innerHTML
+		openRestaurant(name)
+	}
+	else if(e.target.parentNode.parentNode.className == 'recBlock'){
+		let name = e.target.parentNode.parentNode.children[0].innerHTML
+		openRestaurant(name)
 	}
 })
+
