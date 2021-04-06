@@ -9,7 +9,9 @@ var urlencodedParser = bodyParser.urlencoded({ extended: false })
 const jsonParser = express.json();
 let http = require("http")
 let fs = require("fs")
-let server = http.createServer(app)
+
+let PORT = process.env.PORT || 80
+let server = require("http").createServer(app).listen(PORT)
 
 
 app.use(express.static('scripts'))
@@ -24,6 +26,18 @@ app.listen(3000)
 
 const mongoose = require("mongoose")
 const Schema = mongoose.Schema
+
+let mongo = require('./mongo')
+let connectToMongoDb = async () => {
+	await mongo().then(MongoClient => {
+		try{
+			console.log('Connected to mongoDB!')
+		} finally{
+			console.log("ok")
+		}
+	})
+}
+connectToMongoDb()
 
 class Review{
 	constructor(userName, text, date, mark, logo, photoes){
