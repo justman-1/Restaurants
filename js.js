@@ -9,9 +9,7 @@ var urlencodedParser = bodyParser.urlencoded({ extended: false })
 const jsonParser = express.json();
 let http = require("http")
 let fs = require("fs")
-
-let PORT = process.env.PORT || 80
-let server = require("http").createServer(app).listen(PORT)
+let server = http.createServer(app)
 
 
 app.use(express.static('scripts'))
@@ -26,18 +24,6 @@ app.listen(3000)
 
 const mongoose = require("mongoose")
 const Schema = mongoose.Schema
-
-let mongo = require('./mongo')
-let connectToMongoDb = async () => {
-	await mongo().then(MongoClient => {
-		try{
-			console.log('Connected to mongoDB!')
-		} finally{
-			console.log("ok")
-		}
-	})
-}
-connectToMongoDb()
 
 class Review{
 	constructor(userName, text, date, mark, logo, photoes){
@@ -83,6 +69,8 @@ const userScheme = new Schema({
 
 const Restaurant = mongoose.model("Restaurant", restScheme);
 const User = mongoose.model("User", userScheme);
+
+mongoose.connect("mongodb://localhost:27017/", { useUnifiedTopology: true, useNewUrlParser: true });
 
 app.get("/", (req, res)=>{
 	res.render('main', {})
@@ -384,8 +372,18 @@ app.post("/sendReview", jsonParser, (req, res)=>{
 	console.log(req.body)
 	Restaurant.findOne({name: req.body.rest}, (err, docs)=>{
 		let reviews = docs.reviews
+		let rating = 0
+		for(i=0;i<docs.reviews.length;i++){
+			rating = +rating + +docs.reviews[i].mark
+			console.log(rating)
+			console.log(docs.reviews[i].mark)
+			if(i == reviews.length - 1){
+				rating = rating/docs.reviews.length
+			}
+		}
 		reviews.unshift(req.body.review)
-		Restaurant.updateOne({name: req.body.rest}, {reviews: reviews}, ()=>{})
+		rating = rating.toPrecision(2)
+		Restaurant.updateOne({name: req.body.rest}, {reviews: reviews, rating: rating}, ()=>{})
 		res.send('ok')
 	})
 })
