@@ -84,8 +84,6 @@ const userScheme = new Schema({
 const Restaurant = mongoose.model("Restaurant", restScheme);
 const User = mongoose.model("User", userScheme);
 
-mongoose.connect("mongodb://localhost:27017/", { useUnifiedTopology: true, useNewUrlParser: true });
-
 app.get("/", (req, res)=>{
 	res.render('main', {})
 })

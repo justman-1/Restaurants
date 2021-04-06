@@ -118,9 +118,9 @@ function getRest(){
             	}
             	console.log(e.mark)
             	let ph = ''
-            	e.photoes.forEach(elem=>{
-            		ph += `<img src='${elem}' class='revImage2'>`
-            	})
+            	for(i=0;i<e.photoes.length;i++){
+            		ph += `<img src='${e.photoes[i]}' class='revImage2'>`
+            	}
             	$(".allReviews").append(`<div class='review'>
 							<div class="reviewStars">
 								<img src="/fullStar.png" class='rewStar' id='rewStar1'>
@@ -558,10 +558,41 @@ $(".addReviewBut").click(()=>{
 				$('#star4').attr('src', '/star.png')
 				$('#star5').attr('src', '/star.png')
 				$(".addImageRev").val('')
-				photoes = 0
-				rate = 0
 				$(".reviewTextAdd").val('')
 				$(".divImg2").remove()
+				let e = new Review(name, text, now, rating, logo, photoes)
+            	let stars = ['/star.png', '/star.png', '/star.png', '/star.png', '/star.png']
+            	for(i=0;i<e.mark;i++){
+            		stars[i] = '/fullStar.png'
+            		console.log(i)
+            	}
+            	console.log(e.mark)
+            	let ph = ''
+            	for(i=0;i<photoes.length;i++){
+            		ph += `<img src='${photoes[i]}' class='revImage2'>`
+            		console.log(ph)
+            	}
+            	console.log(ph)
+            	
+            	setTimeout(()=>{
+            		$(".allReviews").prepend(`<div class='review'>
+							<div class="reviewStars">
+								<img src="/fullStar.png" class='rewStar' id='rewStar1'>
+						        <img src="${stars[1]}" class='rewStar' id='rewStar2'>
+						        <img src="${stars[2]}" class='rewStar' id='rewStar3'>
+						        <img src="${stars[3]}" class='rewStar' id='rewStar4'>
+						        <img src="${stars[4]}" class='rewStar' id='rewStar5'>
+							</div>
+							<div class="reviewName">${e.name}</div>
+							<div class="reviewText">${e.text}</div>
+							<div class="reviewImages2">
+								${ph}
+							</div>
+							<div class="rewDate">11.03.21</div>
+						</div>`) 
+            	photoes = 0
+				rate = 0
+			}, 40)
 		    }
 		}
 	}
