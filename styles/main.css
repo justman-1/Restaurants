@@ -1,0 +1,361 @@
+body{
+	font-family: calibri;
+	overflow-y: scroll;
+}
+header{
+	position: relative;
+	min-width: 700px;
+	max-width: 100%;
+	display: flex;
+	font-size: 20px;
+	margin-top: 20px;
+	transition: all 0.1s ease;
+}
+section{
+	transition: all 0.1s ease;
+}
+.headerEmpty{
+	width: 20%;
+}
+.searchInp{
+	width: 39%;
+	box-shadow: 0px 0px 10px #BDBDBD;
+	border: 0px solid black;
+	font-size: 20px;
+	padding: 10px;
+	border-radius: 5px;
+}
+.searchBut{
+	width: 30px;
+	filter: invert(1);
+}
+.searchDiv{
+	width: 30px;
+	height: 30px;
+	padding: 10px;
+	background: #FF2941;
+	position: relative;
+	left: -5px;
+	cursor: pointer;
+	border-radius: 4px;
+	box-shadow: 0px 0px 10px #BDBDBD;
+}
+.searchInp:focus{
+	border: 0px solid black;
+	outline: none;
+}
+.logInBut{
+	padding: 10px 15px 10px 15px;
+	border: 1px solid #BABABA;
+	float: right;
+	border-radius: 5px;
+	margin-left: 10px;
+	color: gray;
+	cursor: pointer;
+	transition: all 0.2s ease;
+}
+.logInBut:hover{
+	box-shadow: 0px 0px 4px gray;
+}
+.signUpBut{
+	float: right;
+	background: #FF2941;
+	border-radius: 5px;
+	padding: 10px 15px 10px 15px;
+	margin-left: 10px;
+	color: white;
+	cursor: pointer;
+	transition: all 0.2s ease;
+}
+.signUpBut:hover{
+	box-shadow: 0px 0px 4px gray;
+}
+.log{
+	width: 39%;
+}
+.mainSect{
+	width: 100%;
+	margin-top: 20px;
+	border-top: 1px solid #D1D1D1;
+	display: flex;
+}
+nav{
+	width: 15%;
+	border-right: 1px solid #D1D1D1;
+	padding: 25px;
+}
+.countriesName{
+	font-weight: 600;
+	font-size: 20px;
+}
+.cuisine{
+	display: flex;
+	margin-top: 10px;
+}
+.allRestaurants{
+	border-right: 1px solid #D1D1D1;
+	width: 60%;
+}
+.recommended{
+	width: 24%;
+	font-weight: 600;
+	font-size: 20px;
+}
+.recPart{
+	text-align: center;
+	margin-top: 10px;
+	cursor: pointer;
+	font-weight: 500;
+	border-radius: 4px;
+}
+.recPart:hover{
+	font-weight: 600;
+}
+.restaurant{
+	width: 80%;
+	margin-left: 10%;
+	margin-top: 20px;
+	border-radius: 5px;
+	border: 1px solid #D1D1D1;
+	display: flex;
+	transition: all 0.3s ease;
+}
+.restaurant:hover{
+	box-shadow: 0px 0px 10px #BDBDBD;
+}
+.restImg{
+	width: 100%;
+	border-radius: 5px;
+}
+.restImgDiv{
+	width: 40%;
+	margin: 30px;
+}
+.resDesc{
+	width: 50%;
+	margin: 30px 10px 10px 30px;
+}
+.resName{
+	font-weight: 600;
+	font-size: 20px;
+}
+.resRating{
+	display: flex;
+}
+.ratingNum{
+	font-size: 19px;
+	color: #EBCD00;
+}
+.ratingStar{
+	width: 20px;
+	margin-left: 5px;
+}
+.cuisineName{
+	font-weight: 600;
+	margin-left: 1px;
+}
+.resMore{
+	margin-top: 10px;
+}
+.loading{
+	display: none;
+	font-size: 25px;
+	text-align: center;
+	width: 80%;
+	margin-left: 10%;
+}
+.loadingIm{
+	width: 40px;
+	margin-top: 40px;
+	animation: loading 0.8s linear infinite;
+	transition: all 1.5s ease ;
+}
+@keyframes loading{
+	0%{transform: rotate(359.99deg);}
+	100%{transform: rotate(0deg);}
+}
+.noRestaurants{
+	font-size: 30px;
+	color: gray;
+	text-align: center;
+	margin-top: 40px;
+}
+.additionalName{
+	font-weight: 600;
+	font-size: 20px;
+	margin-top: 30px;
+}
+.additional{
+	display: flex;
+	margin-top: 10px;
+}
+.recommendedName{
+	text-align: center;
+	margin-top: 10px;
+	font-weight: 600;
+	width: 100%;
+}
+.recBlock{
+	width: 80%;
+	margin-left: 10%;
+	margin-top: 20px;
+	margin-bottom: 20px;
+	border-radius: 4px;
+	border: 1px solid #D1D1D1;
+	font-size: 15px;
+	transition: all 0.2s ease;
+}
+.recBlock:hover{
+	box-shadow: 0px 0px 4px gray;
+}
+.recName{
+	text-align: center;
+	font-weight: 600;
+}
+.recImg{
+	width: 80%;
+	margin: 10px 10% 10px 10%;
+	border-radius: 5px;
+}
+.recRating{
+	display: flex;
+	margin-left: 10%;
+	margin-bottom: 5%;
+	width: 90%;
+}
+.recSpan{
+	font-weight: 600;
+	color: #EBCD00;
+}
+.recStar{
+	width: 15px;
+	margin-left: 5px;
+}
+.loading2{
+	display: none;
+	font-size: 25px;
+	text-align: center;
+	width: 80%;
+	margin-left: 10%;
+}
+.loadingIm2{
+	width: 40px;
+	margin-top: 40px;
+	animation: loading 0.8s linear infinite;
+	transition: all 1.5s ease ;
+}
+.openRest{
+	display: none;
+}
+
+
+.signupForm{
+	width: 300px;
+	position: fixed;
+	z-index: 2;
+	margin-top: -700px;
+	padding: 20px;
+	background: #F5F5F5;
+	border-radius: 5px;
+	transition: all 0.4s ease;
+}
+.names{
+	display: flex;
+}
+.namesPart{
+	width: 49%;
+	height: 20px;
+	font-size: 16px;
+	margin-right: 1%;
+}
+.formInp{
+	margin-top: 7px;
+	width: 96.5%;
+	height: 20px;
+	font-size: 16px;
+}
+.signupSubmit{
+	margin-top: 7px;
+	width: 99%;
+	font-size: 16px;
+	background: #FF2941;
+	border-radius: 4px;
+	color: white;
+	padding: 10px;
+	border: 0px solid white;
+	opacity: 0.5;
+}
+.signupError{
+	font-size: 14px;
+	color: red;
+	text-align: center;
+	margin-top: 10px;
+}
+.signupSubmit:focus{
+	border: 0px solid black;
+	outline: none;
+}
+.signupBack{
+	color: red;
+	margin-bottom: 10px;
+	cursor: pointer;
+}
+.loading3{
+	display: none;
+	font-size: 25px;
+	text-align: center;
+	width: 80%;
+	margin-left: 10%;
+}
+
+
+.loginForm{
+	width: 300px;
+	position: fixed;
+	z-index: 2;
+	margin-top: -700px;
+	padding: 20px;
+	background: #F5F5F5;
+	border-radius: 5px;
+	transition: all 0.4s ease;
+}
+.loginBack{
+	color: red;
+	margin-bottom: 10px;
+	cursor: pointer;
+}
+.loginSubmit{
+	margin-top: 7px;
+	width: 99%;
+	font-size: 16px;
+	background: #FF2941;
+	border-radius: 4px;
+	color: white;
+	padding: 10px;
+	border: 0px solid white;
+	opacity: 0.5;
+}
+.loginSubmit:focus{
+	border: 0px solid black;
+	outline: none;
+}
+.loginError{
+	color: red;
+	margin-top: 10px;
+	text-align: center;
+}
+.loading4{
+	display: none;
+	font-size: 25px;
+	text-align: center;
+	width: 80%;
+	margin-left: 10%;
+}
+
+.myImage{
+	display: none;
+}
+.myImageImg{
+	width: 45px;
+	border-radius: 45px;
+}

@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="/restaurant.css">
+	<title></title>
+</head>
+<body>
+	<form class='signupForm' action='/signup' method='post'>
+		<div class="signupBack">Back</div>
+		<div class='names'>
+			<input type="text" name="firstName" placeholder="First name" class='namesPart' id='namesPart1'>
+		    <input type="text" name="lastName" placeholder="Last name" class='namesPart' id='namesPart2'>
+		</div>
+		<input type="email" name="email" placeholder="your_email@gmail.com" class='formInp' id='formInp1'>
+		<input type="password" name="password" placeholder="password" class='formInp' id='formInp2'>
+
+		<input type="button" value='Sign up' class='signupSubmit'>
+		<div class='signupError'></div>
+		<div class="loading3">
+			<img src="/imgs/reset.svg" class='loadingIm'>
+		</div>
+	</form>
+
+	<form class='loginForm' action='/login' method='post'>
+		<div class="loginBack">Back</div>
+		<input type="email" name="email" placeholder="your_email@gmail.com" class='formInp' id='formInp3'>
+		<input type="password" name="password" placeholder="password" class='formInp' id='formInp4'>
+		<input type="button" value='Log in' class='loginSubmit'>
+		<div class='loginError'></div>
+		<div class="loading4">
+			<img src="/imgs/reset.svg" class='loadingIm'>
+		</div>
+	</form>
+
+	<div class="showDish">
+		<div class='showDishImgBl'>
+			<img class="cross2" src='/cross2.png'>
+			<img src="/reset.svg" class='showDishImg'>
+		</div>
+		<div>
+			<div class='showDishName'></div>
+		    <div class='showDishDesc'></div>
+		</div>
+	</div>
+
+	<header>
+		<div class='headerEmpty'>
+			<a href='/'><img src="/arraw.png" class='back'></a>
+			<div class="backText">Back to the main page</div>
+		</div>
+		<div class='log'>
+			<div class='signUpBut'>Sign up</div>
+			<div class='logInBut'>Log in</div>
+		</div>
+		<div class="myImage">
+			<a href='feed'><img class="myImageImg" src='/user.png'></a>
+		</div>
+	</header>
+		<section class="mainSect">
+			<div class="restaurantInfo">
+				<div class="restImgsAndLittleInfo">
+					<div class='restImgs'>
+						<img src="/arrow.svg" class='toggleArrowLeft'>
+					    <div class='restInfoImgBl'>
+					    	<img src="" class='restInfoImg'>
+					    </div>
+					    <img src="/arrow.svg" class='toggleArrowRight'>
+				    </div>
+				    <div class="restLittleInfo">
+				    	<div><span class='restInfoName'></span><img src="/plus.png" class='addRestaurant'><div style='width: 0px; height: 0px; float: right'><div class='addRestText'>Add restaurant to your collection</div></div></div>
+				    	<div class="restInfoRating">
+				    		<div class="ratingInfoNum"></div>
+				    		<img src="/star.svg" class='ratingInfoStar'>
+				    	</div>
+				    	<div class="restInfoCuisine">Cuisine: <span class='restInfoCusineSp'></span></div>
+				    	<div class="restInfoAddress">Address: <span class='restInfoAddressSp'></span></div>
+				    	<div class='deliveryAndTakeout'>
+				    		<div class='deliveryHave'>
+				    			<div>Delivery</div>
+				    			<img src="/cross.png" class='deliveryImg'>
+				    		</div>
+				    		<div class='takeoutHave'>
+				    			<div>Takeout</div>
+				    			<img src="/cross.png" class='takeoutImg'>
+				    		</div>
+				    	</div>
+				    </div>
+				</div>
+
+				<div class='moreInfo'>
+					<div class="restInfoDesc"></div>
+					<div class="dishes">
+						<div class='simpleDishesName'>Dishes:</div>
+						<div class="simpleDishes">
+							
+						</div>
+						<div class='bestDishesName'>Best dishes:</div>
+						<div class="bestDishes">
+				
+						</div>
+					</div>
+				</div>
+
+				<div class="reviews">
+					<div class="rateName">Rate this restaurant</div>
+					<div class="reviewAdd">
+						<div class="textIfHaventAcc">You must log in or sign up to create a review</div>
+						<div class="textAndStars">
+							<textarea class='reviewTextAdd' placeholder="Your review about this restaurnat..."></textarea>
+							<div class='rateFiveStars'>
+						        <img src="/star.png" class='rateStar' id='star1'>
+						        <img src="/star.png" class='rateStar' id='star2'>
+						        <img src="/star.png" class='rateStar' id='star3'>
+						        <img src="/star.png" class='rateStar' id='star4'>
+						        <img src="/star.png" class='rateStar' id='star5'>
+					        </div>
+						</div>
+						<div class="reviewImages1">
+							<label>
+								<img src="/addImage.png" class='reviewImageAdd'>
+								<input type="file" class='addImageRev'>
+							</label>
+						</div>
+						<div class="addReviewBut">Add review</div>
+					</div>
+					<div class='reviewsName'>Reviews</div>
+					<div class="allReviews">
+						
+					</div>
+				</div>
+			</div>
+
+
+			<div class='recommended'>
+			    <div class='recommendedName'>Recommended</div>
+			    <div class="loading2">
+				    <img src="/imgs/reset.svg" class='loadingIm2'>
+			    </div>
+			    <div class="allRecommends">
+				
+			    </div>
+		    </div>
+		</section>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src='forms.js'></script>
+<script src='/restaurant.js'></script>
+</body>
+</html>
