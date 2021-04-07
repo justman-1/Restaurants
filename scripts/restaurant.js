@@ -580,6 +580,9 @@ $(".addReviewBut").click(()=>{
             		console.log(ph)
             	}
             	console.log(ph)
+							if(e.logo == 'none'){
+            		e.logo = '/user.png'
+            	}
 
             	setTimeout(()=>{
             		$(".allReviews").prepend(`<div class='review'>
