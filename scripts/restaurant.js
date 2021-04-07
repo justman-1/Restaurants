@@ -590,7 +590,10 @@ $(".addReviewBut").click(()=>{
 						        <img src="${stars[3]}" class='rewStar' id='rewStar4'>
 						        <img src="${stars[4]}" class='rewStar' id='rewStar5'>
 							</div>
-							<div class="reviewName">${e.name}</div>
+							<div style='display: flex'>
+							    <img src='${e.logo}' class='reviewLogo'>
+							    <div class="reviewName">${e.name}</div>
+							</div>
 							<div class="reviewText">${e.text}</div>
 							<div class="reviewImages2">
 								${ph}
