@@ -22,11 +22,11 @@ function checkAcc(){
 
 	req.onreadystatechange = function(){
 		if (req.readyState != 4){
-			
+
 		}
         if(req.readyState === XMLHttpRequest.DONE && req.status === 200){
-        	let res1 = JSON.parse(req.responseText) 
-        	Me = res1 
+        	let res1 = JSON.parse(req.responseText)
+        	Me = res1
         	var thisRest = {
 	            name: localStorage.getItem('restaurant')
             }
@@ -42,12 +42,12 @@ function checkAcc(){
             })
 	        if(res1.image == 'none'){
 	        	$(".myImageImg").attr("src", '/user.png')
-	        } 
+	        }
 	        else{
 	        	$(".myImageImg").attr("src", res1.image)
-	        }   
+	        }
         }
-    }    	
+    }
 }
 }
 checkAcc()
@@ -102,11 +102,11 @@ $(".signupSubmit").click(e=>{
 	                })
 	                $(".myImage").css({
 		                'display': 'block'
-	                })  
+	                })
 	                if(res.image == 'none'){
 	        	        $(".myImageImg").attr("src", '/user.png')
 
-	                } 
+	                }
 	                else{
 	        	        $(".myImageImg").attr("src", res.image)
 	                }
@@ -119,22 +119,19 @@ $(".signupSubmit").click(e=>{
 	                })
 	                $("section").css({
 		                'filter': 'blur(0px)'
-	                }) 
-	                $(".textAndStars").css({
-			            'filter': 'blur(0px)'
-		            })
-		            $(".reviewImages1").css({
-			            'filter': 'blur(0px)'
-		            })
+	                })
 		            $(".addReviewBut").css({
-			            'filter': 'blur(0px)'
+			            'display': 'block'
 		            })
-		            $(".textIfHaventAcc").css({
-			            'display': 'none'
-		            })  
+		            $(".rateName").css({
+			            'display': 'block'
+		            })
+		            $(".reviewAdd").css({
+			            'display': 'block'
+		            })
 		    	}
 		    }
-		}    	
+		}
 	}
 })
 document.addEventListener('input', (e)=>{
@@ -242,13 +239,13 @@ $(".loginSubmit").click(e=>{
 	                })
 	                $(".myImage").css({
 		                'display': 'block'
-	                })  
+	                })
 	                if(res.image == 'none'){
 	        	        $(".myImageImg").attr("src", '/user.png')
-	                } 
+	                }
 	                else{
 	        	        $(".myImageImg").attr("src", res.image)
-	                }  
+	                }
 	                $(".loginError").html('')
 	                $(".loginForm").css({
 		                'margin-top': '-700px'
@@ -258,22 +255,19 @@ $(".loginSubmit").click(e=>{
 	                })
 	                $("section").css({
 		                'filter': 'blur(0px)'
-	                }) 
-	                $(".textAndStars").css({
-			            'filter': 'blur(0px)'
+	                })
+	                $(".addReviewBut").css({
+			            'display': 'block'
 		            })
-		            $(".reviewImages1").css({
-			            'filter': 'blur(0px)'
+		            $(".rateName").css({
+			            'display': 'block'
 		            })
-		            $(".addReviewBut").css({
-			            'filter': 'blur(0px)'
+		            $(".reviewAdd").css({
+			            'display': 'block'
 		            })
-		            $(".textIfHaventAcc").css({
-			            'display': 'none'
-		            })  
 		    	}
 		    }
-		}   
+		}
 	}
 })
 document.addEventListener('input', (e)=>{

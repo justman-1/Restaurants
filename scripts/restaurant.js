@@ -9,9 +9,9 @@ class Review{
 		this.name = userName;//Mike
 		this.text = text;//Here are tasty dishes
 		this.date = date;//2021.04.12
-		this.mark = mark;//from 1 to 5 
+		this.mark = mark;//from 1 to 5
 		this.logo = logo;
-		this.photoes = photoes//Array 
+		this.photoes = photoes//Array
 	}
 }
 var date = new Date()
@@ -118,6 +118,9 @@ function getRest(){
             	}
             	console.log(e.mark)
             	let ph = ''
+            	if(e.logo == 'none'){
+            		e.logo = '/user.png'
+            	}
             	for(i=0;i<e.photoes.length;i++){
             		ph += `<img src='${e.photoes[i]}' class='revImage2'>`
             	}
@@ -129,12 +132,15 @@ function getRest(){
 						        <img src="${stars[3]}" class='rewStar' id='rewStar4'>
 						        <img src="${stars[4]}" class='rewStar' id='rewStar5'>
 							</div>
-							<div class="reviewName">${e.name}</div>
+							<div style='display: flex'>
+							    <img src='${e.logo}' class='reviewLogo'>
+							    <div class="reviewName">${e.name}</div>
+							</div>
 							<div class="reviewText">${e.text}</div>
 							<div class="reviewImages2">
 								${ph}
 							</div>
-							<div class="rewDate">11.03.21</div>
+							<div class="rewDate">${e.date}</div>
 						</div>`)
             })
         }
@@ -177,7 +183,7 @@ function getAllRecs(){
 	})
 
         }
-    }    
+    }
 }
 getAllRecs()
 
@@ -250,7 +256,7 @@ centerStars()
 
 $(".rateFiveStars").click(e=>{
 	if(e.target.className === 'rateStar'){
-		
+
 	}
 })
 
@@ -534,6 +540,7 @@ $(".addReviewBut").click(()=>{
 		let name = Me.firstName + ' ' + Me.lastName
  		let logo = Me.image
 		let req = new XMLHttpRequest()
+		console.log(new Review(name, text, now, rating, logo, photoes))
 		console.log({review: new Review(name, text, now, rating, logo, photoes), rest: thisRest.name})
 		let data = JSON.stringify({review: new Review(name, text, now, rating, logo, photoes), rest: thisRest.name})
 		$(".reviewAdd").css({
@@ -573,7 +580,7 @@ $(".addReviewBut").click(()=>{
             		console.log(ph)
             	}
             	console.log(ph)
-            	
+
             	setTimeout(()=>{
             		$(".allReviews").prepend(`<div class='review'>
 							<div class="reviewStars">
@@ -589,7 +596,7 @@ $(".addReviewBut").click(()=>{
 								${ph}
 							</div>
 							<div class="rewDate">11.03.21</div>
-						</div>`) 
+						</div>`)
             	photoes = 0
 				rate = 0
 			}, 40)
@@ -599,17 +606,14 @@ $(".addReviewBut").click(()=>{
 })
 function checkAcc2(){
 	if(Me == undefined){
-		$(".textAndStars").css({
-			'filter': 'blur(10px)'
-		})
-		$(".reviewImages1").css({
-			'filter': 'blur(10px)'
-		})
 		$(".addReviewBut").css({
-			'filter': 'blur(10px)'
+			'display': 'none'
 		})
-		$(".textIfHaventAcc").css({
-			'display': 'block'
+		$(".rateName").css({
+			'display': 'none'
+	    })
+		$(".reviewAdd").css({
+			'display': 'none'
 		})
 	}
 }
