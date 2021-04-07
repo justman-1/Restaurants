@@ -152,7 +152,8 @@ async function filt(){
 			}
 		}
 		else if(req.readyState === XMLHttpRequest.DONE && req.status === 200){
-			let x = 0
+			if(sendedReqInex == a){
+				let x = 0
 		    filter.forEach(e=>{
 			    if(e[1] == true){
 				    x = 1
@@ -168,8 +169,6 @@ async function filt(){
 			    getRestsTimes = 1
 		        maxScrolled.level += 1
 		    }
-
-			if(sendedReqInex == a){
 				$('.loading').css({'display': 'none'})
 			 let res = JSON.parse(req.responseText)
 			 let restsBl = document.querySelector(".allRestaurants").children
