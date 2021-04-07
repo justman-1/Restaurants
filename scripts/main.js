@@ -1,6 +1,7 @@
 function encode(e){
 	return encodeURIComponent(e)
 }
+let sendedReqInex = 0
 let getRestsTimes = 0
 let maxScrolled = {
 	scrolled: 0,
@@ -136,6 +137,8 @@ async function filt(){
 	getRestsTimes = 0
 	$('.loading').css({'display': 'block'})
 	$(".restaurants").remove()
+	let a = +sendedReqInex + +1
+	sendedReqInex += 1
 	let req = new XMLHttpRequest()
 	req.open("GET", '/getFilterRests', true)
 	req.setRequestHeader('filter', encode(JSON.stringify(filter)))
@@ -144,44 +147,48 @@ async function filt(){
 
 	req.onreadystatechange = function(){
 		if (req.readyState != 4){
-			$('.loading').css({'display': 'block'})
+			if(sendedReqInex == a){
+				  $('.loading').css({'display': 'block'})
+			}
 		}
 		else if(req.readyState === XMLHttpRequest.DONE && req.status === 200){
-			$('.loading').css({'display': 'none'})
-			let res = JSON.parse(req.responseText)
-			let restsBl = document.querySelector(".allRestaurants").children
-			for(let i=1;i<restsBl.length;i++){
-				console.log(restsBl.length)
-				restsBl[i].parentNode.removeChild(restsBl[i])
+			if(sendedReqInex == a){
+				$('.loading').css({'display': 'none'})
+			 let res = JSON.parse(req.responseText)
+			 let restsBl = document.querySelector(".allRestaurants").children
+			 for(let i=1;i<restsBl.length;i++){
+				 console.log(restsBl.length)
+				 restsBl[i].parentNode.removeChild(restsBl[i])
+			 }
+					 $(".allRestaurants").append('<div class="restaurants"></div>')
+					 if(res.length == 0){
+						 $(".restaurants").append('<div class="noRestaurants">There are not restaurants for these categories</div>')
+					 }
+					 res.forEach(elem=>{
+						 let color = '#EBCD00'
+						 let display = 'block'
+						 if(elem.rating === 0){
+							 color = 'gray'
+							 display = 'none'
+							 elem.rating = 'no reviews'
+						 }
+						 $(".restaurants").append(`
+				 <div class='restaurant'>
+				 <div class='restImgDiv'>
+						 <img src="${elem.images[0]}" class='restImg'>
+				 </div>
+				 <div class="resDesc">
+						 <div class="resName">${elem.name}</div>
+						 <div class='resRating'>
+								 <div class="ratingNum" style='color: ${color}'>${elem.rating}</div>
+								 <img src="/star.svg" class='ratingStar' style='display: ${display}'>
+						 </div>
+						 <div class="resCuisine">Cuisine:<span class='cuisineName'>${elem.cuisine}</span></div>
+						 <div class="resMore">${elem.description.substr(0, 100)}...</div>
+				 </div>
+				 </div>`)
+					 })
 			}
-	        $(".allRestaurants").append('<div class="restaurants"></div>')
-	        if(res.length == 0){
-	        	$(".restaurants").append('<div class="noRestaurants">There are not restaurants for these categories</div>')
-	        }
-	        res.forEach(elem=>{
-	        	let color = '#EBCD00'
-		        let display = 'block'
-		        if(elem.rating === 0){
-			        color = 'gray'
-			        display = 'none'
-			        elem.rating = 'no reviews'
-		        }
-	        	$(".restaurants").append(`
-		    <div class='restaurant'>
-		    <div class='restImgDiv'>
-		        <img src="${elem.images[0]}" class='restImg'>
-		    </div>
-		    <div class="resDesc">
-		        <div class="resName">${elem.name}</div>
-		        <div class='resRating'>
-		            <div class="ratingNum" style='color: ${color}'>${elem.rating}</div>
-		            <img src="/star.svg" class='ratingStar' style='display: ${display}'>
-		        </div>
-		        <div class="resCuisine">Cuisine:<span class='cuisineName'>${elem.cuisine}</span></div>
-		        <div class="resMore">${elem.description.substr(0, 100)}...</div>
-		    </div>
-		    </div>`)
-	        })
 		}
 	}
 
