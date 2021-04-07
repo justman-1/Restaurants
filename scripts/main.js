@@ -150,6 +150,10 @@ async function filt(){
 			$('.loading').css({'display': 'none'})
 			let res = JSON.parse(req.responseText)
 			$(".restaurants").remove()
+			let restsBl = document.querySelector(".restaurants").children
+			for(let i=1;i<restsBl.length;i++){
+				restsBl[i].parentNode.removeChild(restsBl[i])
+			}
 	        $(".allRestaurants").append('<div class="restaurants"></div>')
 	        if(res.length == 0){
 	        	$(".restaurants").append('<div class="noRestaurants">There are not restaurants for these categories</div>')
