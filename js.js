@@ -147,7 +147,7 @@ app.get('/getFilterRests', (req, res)=>{
 			})
 			setTimeout(()=>{
 				    res.send(JSON.stringify(result2))
-			    }, 50)
+			    }, 250)
 		}
 		else if(filt1.length > 0 && filt2.length < 1){
 			filt1.forEach(e=>{
@@ -159,7 +159,7 @@ app.get('/getFilterRests', (req, res)=>{
 			})
 			setTimeout(()=>{
 				res.send(JSON.stringify(result1))
-			}, 50)
+			}, 250)
 			console.log(4444444444)
 		}
 		else if(filt1.length > 0 && filt2.length > 0){
@@ -194,8 +194,8 @@ app.get('/getFilterRests', (req, res)=>{
 				})
 				setTimeout(()=>{
 					res.send(JSON.stringify(result3))
-				}, 150)
-			}, 50)
+				}, 250)
+			}, 150)
 		}
 	}, 30)
 })
