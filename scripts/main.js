@@ -149,9 +149,9 @@ async function filt(){
 		else if(req.readyState === XMLHttpRequest.DONE && req.status === 200){
 			$('.loading').css({'display': 'none'})
 			let res = JSON.parse(req.responseText)
-			$(".restaurants").remove()
 			let restsBl = document.querySelector(".restaurants").children
 			for(let i=1;i<restsBl.length;i++){
+				console.log(restsBl.length)
 				restsBl[i].parentNode.removeChild(restsBl[i])
 			}
 	        $(".allRestaurants").append('<div class="restaurants"></div>')
