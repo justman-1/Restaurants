@@ -92,6 +92,14 @@ app.get('/getRests', (req, res)=>{
 	let times = req.headers['times']*5
 		Restaurant.find({}, (err, docs)=>{
 			let arr = docs.slice(+times, +times + +5)
+			arr.forEach(e=>{
+				e = {name: e.name,
+					cuisine: e.cuisine,
+					rating: e.rating,
+				  description: e.description,
+					images: e.images}
+					return e
+			})
 			console.log(arr)
 			res.send(JSON.stringify(arr))
 			console.log(1111111111)
@@ -127,6 +135,14 @@ app.get('/getFilterRests', (req, res)=>{
 				if(docs.length > 5){
 					docs.length = 5
 				}
+				docs.forEach(e=>{
+					e = {name: e.name,
+						cuisine: e.cuisine,
+						rating: e.rating,
+					  description: e.description,
+						images: e.images}
+						return e
+				})
 				res.send(JSON.stringify(docs))
 				console.log(222222)
 			})
@@ -145,6 +161,14 @@ app.get('/getFilterRests', (req, res)=>{
 					})
 				}
 			})
+			result2.forEach(e=>{
+				e = {name: e.name,
+					cuisine: e.cuisine,
+					rating: e.rating,
+				  description: e.description,
+					images: e.images}
+					return e
+			})
 			setTimeout(()=>{
 				    res.send(JSON.stringify(result2))
 			    }, 250)
@@ -155,6 +179,14 @@ app.get('/getFilterRests', (req, res)=>{
 					result1 = result1.concat(docs)
 					console.log(docs)
 					console.log(e)
+					result1.forEach(e=>{
+						e = {name: e.name,
+							cuisine: e.cuisine,
+							rating: e.rating,
+						  description: e.description,
+							images: e.images}
+							return e
+					})
 				})
 			})
 			setTimeout(()=>{
@@ -193,6 +225,14 @@ app.get('/getFilterRests', (req, res)=>{
 					})
 				})
 				setTimeout(()=>{
+					result3.forEach(e=>{
+						e = {name: e.name,
+							cuisine: e.cuisine,
+							rating: e.rating,
+							description: e.description,
+							images: e.images}
+							return e
+					})
 					res.send(JSON.stringify(result3))
 				}, 250)
 			}, 150)
@@ -217,7 +257,17 @@ app.get('/searchRests', (req, res)=>{
 				        console.log(232423234234)
 			        }
 			    })
-            setTimeout(()=>{console.log(result);res.end(JSON.stringify(result))}, 300)
+            setTimeout(()=>{
+							console.log(result)
+							result.forEach(e=>{
+								e = {name: e.name,
+									cuisine: e.cuisine,
+									rating: e.rating,
+									description: e.description,
+									images: e.images}
+									return e
+							})
+							res.end(JSON.stringify(result))}, 300)
 		})
 	}
 })
@@ -229,6 +279,14 @@ app.get('/getRecs', (req, res)=>{
 		}
 		docs.sort((a, b)=>{
 			return b.rating - a.rating
+		})
+		docs.forEach(e=>{
+			e = {name: e.name,
+				cuisine: e.cuisine,
+				rating: e.rating,
+				description: e.description,
+				images: e.images}
+				return e
 		})
 		setTimeout(()=>{res.end(JSON.stringify(docs))}, 300)
 	})
