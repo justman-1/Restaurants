@@ -313,7 +313,9 @@ $(".additionals").click((e)=>{
 				}
 			})
 		}
-		filt()
+		setTimeout(()=>{
+			filt()
+		}, 20)
 	}
 
 })
