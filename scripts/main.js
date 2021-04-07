@@ -98,7 +98,7 @@ function getAllRecs(){
 				</div>`)
 	})
         }
-    }    
+    }
 }
 getAllRecs()
 
@@ -149,6 +149,7 @@ async function filt(){
 		else if(req.readyState === XMLHttpRequest.DONE && req.status === 200){
 			$('.loading').css({'display': 'none'})
 			let res = JSON.parse(req.responseText)
+			$(".restaurants").remove()
 	        $(".allRestaurants").append('<div class="restaurants"></div>')
 	        if(res.length == 0){
 	        	$(".restaurants").append('<div class="noRestaurants">There are not restaurants for these categories</div>')
@@ -179,7 +180,7 @@ async function filt(){
 	        })
 		}
 	}
-	
+
 }
 
 $(".allCuisines").click(e=>{
@@ -341,4 +342,3 @@ $(document).click((e)=>{
 		openRestaurant(name)
 	}
 })
-
