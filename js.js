@@ -194,7 +194,7 @@ app.get('/getFilterRests', (req, res)=>{
 				})
 				setTimeout(()=>{
 					res.send(JSON.stringify(result3))
-				}, 50)
+				}, 150)
 			}, 50)
 		}
 	}, 30)
