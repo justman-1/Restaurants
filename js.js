@@ -124,6 +124,9 @@ app.get('/getFilterRests', (req, res)=>{
 	    let result1 = []
 		if(filt1.length < 1 && filt2.length < 1){
 			Restaurant.find({}, (err, docs)=>{
+				if(docs.length > 5){
+					docs.length = 5
+				}
 				res.send(JSON.stringify(docs))
 				console.log(222222)
 			})
