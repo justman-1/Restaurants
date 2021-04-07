@@ -165,9 +165,8 @@ async function filt(){
 			    }
 		    })
 		    if(x === 0){
-			    getAllRestaurants()
+		    	maxScrolled.level = 1
 			    getRestsTimes = 1
-		        maxScrolled.level += 1
 		    }
 				$('.loading').css({'display': 'none'})
 			 let res = JSON.parse(req.responseText)
