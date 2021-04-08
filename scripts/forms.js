@@ -35,7 +35,7 @@ function checkAcc(){
             		$(".addRestaurant").attr('src', '/circleCheckbox.png')
             		$(".addRestText").html("You added this restaurant in your collection").css({
             			'width': '200px',
-            			'top': '-45px',
+            			'top': '-90px',
             			'color': 'gray'
             		})
             	}
