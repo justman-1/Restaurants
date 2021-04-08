@@ -36,8 +36,11 @@ let fixDate = ()=>{
 fixDate()
 let photoes = []
 let rate = 0
-$("title").html(thisRest.name)
-
+let toggleIndex = 1
+$("title").html('Crispy Rating - ' + thisRest.name)
+$(".logo2").css({
+	'margin-left': ($(document).width() - 140)/2 + 'px'
+})
 $(".back").mouseover(()=>{
 	$(".backText").css({
 		'left': '5px',
@@ -95,28 +98,35 @@ function getRest(){
 	            	'margin-left': '10%',
 	            	'transition': 'none'
 	            })
+	            $(".restInfoName").css({
+	            	'margin-left': '120px'
+	            })
+	            $(".restInfoCuisine").css({
+	            	'margin-left': '120px'
+	            })
+	            $(".restLittleInfo").css({
+	            	'margin-left': '16.6%',
+	            	'width': '73%'
+	            })
+	            $(".asdmsm").css({
+	            	'margin-left': '16.6%',
+	            	'width': '73%'
+	            })
             }
-            thisRest.dishes.forEach(e=>{
-            	$(".simpleDishes").append(`
+            for(i=0;i<5;i++){
+            	if(thisRest.dishes[i] != undefined){
+            		$(".simpleDishes").append(`
             		<div class="simpleDishBl">
-					<img src="${e.image}" class='simpleDishImg'>
-					<div class="simpleDishName">${e.name}</div>
+					<img src="${thisRest.dishes[i].image}" class='simpleDishImg'>
+					<div class="simpleDishName">${thisRest.dishes[i].name}</div>
 					</div>`)
-            })
-            thisRest.bestDishes.forEach(e=>{
-            	$(".bestDishes").append(`
-            		<div class="simpleDishBl">
-					<img src="${e.image}" class='simpleDishImg'>
-					<div class="simpleDishName">${e.name}</div>
-					</div>`)
-            })
+            	}
+            }
             thisRest.reviews.forEach(e=>{
             	let stars = ['/star.png', '/star.png', '/star.png', '/star.png', '/star.png']
             	for(i=0;i<e.mark;i++){
             		stars[i] = '/fullStar.png'
-            		console.log(i)
             	}
-            	console.log(e.mark)
             	let ph = ''
             	if(e.logo == 'none'){
             		e.logo = '/user.png'
@@ -219,7 +229,7 @@ function changeImage(e){
 }
 
 let imageIndex = 0
-$(".restImgs").click(e=>{
+$(".restImBl").click(e=>{
 	let length = thisRest.images.length
 	if(length != 1){
 		if(e.target.className === 'toggleArrowLeft'){
@@ -282,7 +292,7 @@ $(".addRestaurant").click(()=>{
 	        $(".addRestaurant").attr('src', '/circleCheckbox.png')
             $(".addRestText").html("You added this restaurant in your collection").css({
                 'width': '200px',
-                'top': '-45px',
+                'top': '-90px',
                 'color': 'gray'
             })
 	    }
@@ -296,7 +306,7 @@ $(".addRestaurant").click(()=>{
 	        $(".addRestaurant").attr('src', '/plus.png')
 	        $(".addRestText").html("Add restaurant to your collection").css({
                 'width': '220px',
-                'top': '-30px',
+                'top': '-70px',
                 'color': 'red'
             })
 	    }
@@ -579,10 +589,10 @@ $(".addReviewBut").click(()=>{
             		ph += `<img src='${photoes[i]}' class='revImage2'>`
             		console.log(ph)
             	}
-            	console.log(ph)
-							if(e.logo == 'none'){
+            	if(e.logo == 'none'){
             		e.logo = '/user.png'
             	}
+            	console.log(ph)
 
             	setTimeout(()=>{
             		$(".allReviews").prepend(`<div class='review'>
@@ -626,3 +636,43 @@ function checkAcc2(){
 setTimeout(()=>{
 	checkAcc2()
 }, 300)
+
+
+$(".restInfoImgBl").width($(".restImBl").width() - 70)
+
+
+$(".toggleDishesRight").click(()=>{
+	if(thisRest.dishes.length > toggleIndex*5 && thisRest.dishes.length != toggleIndex*5){
+		for(i=0;i<document.querySelector(".simpleDishes").children.length;i++){
+			document.querySelector(".simpleDishes").removeChild(document.querySelector(".simpleDishes").children[i])
+		}
+		toggleIndex += 1
+		for(i=toggleIndex;i<toggleIndex + +5;i++){
+			if(thisRest.dishes[i] != undefined){
+				$(".simpleDishes").append(`
+            		<div class="simpleDishBl">
+					<img src="${thisRest.dishes[i].image}" class='simpleDishImg'>
+					<div class="simpleDishName">${thisRest.dishes[i].name}</div>
+					</div>`)
+			}
+		}
+	}
+})
+
+$(".toggleDishesLeft").click(()=>{
+	if(toggleIndex != 1){
+		for(i=0;i<document.querySelector(".simpleDishes").children.length;i++){
+			document.querySelector(".simpleDishes").removeChild(document.querySelector(".simpleDishes").children[i])
+		}
+		toggleIndex = toggleIndex - 1
+		for(i=toggleIndex;i<toggleIndex + +5;i++){
+			if(thisRest.dishes[i] != undefined){
+				$(".simpleDishes").append(`
+            		<div class="simpleDishBl">
+					<img src="${thisRest.dishes[i].image}" class='simpleDishImg'>
+					<div class="simpleDishName">${thisRest.dishes[i].name}</div>
+					</div>`)
+			}
+		}
+	}
+})

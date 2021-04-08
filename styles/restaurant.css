@@ -1,17 +1,22 @@
 body{
-	font-family: calibri;
+	font-family: candara;
 	overflow-y: scroll;
 }
 header{
 	display: flex;
 	border-bottom: 1px solid #BABABA;
-	padding-bottom: 15px;
-	padding-top: 15px
+	padding-bottom: 7px;
+	padding-top: 7px
+}
+.logo2{
+	height: 50px;
+	position: absolute;
 }
 .headerEmpty{
 	width: 60%;
 	display: flex;
 }
+
 input:focus{
 	border: 0px solid black;
 	outline: none;
@@ -61,9 +66,10 @@ input:focus{
 }
 .mainSect{
 	display: flex;
+	width: 100%;
 }
 .recommended{
-	width: 24%;
+	width: 17%;
 	font-weight: 600;
 	font-size: 20px;
 }
@@ -127,13 +133,18 @@ input:focus{
 	margin-left: 5px;
 }
 
-.mainSect{
-	display: flex;
-}
 
 .restaurantInfo{
-	width: 75%;
+	width: 82%;
 	margin-top: 40px;
+}
+
+.restImBl{
+	width: 80%;
+	border-radius: 10px;
+	margin-left: 10%;
+	display: flex;
+	height: 450px;
 }
 
 .restImgsAndLittleInfo{
@@ -147,16 +158,20 @@ input:focus{
 	margin-left: 5%;
 }
 .toggleArrowLeft{
-	width: 30px;
+	width: 40px;
 	transform: rotate(180deg);
 	position: relative;
-	opacity: 0.3;
+	opacity: 0.5;
+	filter: invert(1);
+	right: -50px;
+	z-index: 2;
 }
 .toggleArrowLeft:hover{
 	opacity: 1;
 }
 .restInfoImg{
-	height: 200px;
+	height: 450px;
+	width: 100%;
 	display: block;
 	margin-left: auto;
 	margin-right: auto;
@@ -167,30 +182,45 @@ input:focus{
 	width: 80%;
 }
 .toggleArrowRight{
-	width: 30px;
+	filter: invert(1);
+	width: 40px;
 	position: relative;
-	opacity: 0.3;
+	opacity: 0.5;
+	left: -50px;
+	z-index: 2;
 }
 .toggleArrowRight:hover{
 	opacity: 1;
 }
 
 .restLittleInfo{
-	width: 49%;
+	margin-top: 20px;
+	width: 75%;
+	margin-left: 12.5%;
+	display: flex;
 
 }
 .restInfoName{
-	font-size: 35px;
-	margin: 10px 0px 0px 60px;
+	font-size: 55px;
+	margin: 0px 0px 0px 40px;
 	font-weight: 600;
+	color: white;
+	position: relative;
+	top: -120px;
+	text-shadow: 0px 0px 5px black;
 }
 .restInfoRating{
 	display: flex;
 	margin-left: 60px;
 	margin-top: 10px;
 }
+.restInf2Bl{
+	width: 49%;
+	font-size: 25px;
+}
 .ratingInfoNum{
 	font-size: 30px;
+	font-weight: 600;
 	color: #EBCD00;
 }
 .ratingInfoStar{
@@ -198,20 +228,26 @@ input:focus{
 	margin-left: 4px;
 }
 .restInfoCuisine{
-	font-size: 20px;
-	margin-left: 60px;
-	margin-top: 10px;
+	font-size: 30px;
+	margin-left: 40px;
+	margin-top: 0px;
+	position: relative;
+	top: -130px;
+	color: white;
+	text-shadow: 0px 0px 6px black;
 }
 .restInfoCusineSp{
 	font-weight: 600
 }
 .restInfoAddress{
-	margin-left: 60px;
 	margin-top: 10px;
-	font-size: 20px;
+	font-size: 25px;
+	margin-left: 60px;
 }
 .restInfoAddressSp{
 	font-weight: 600;
+	margin-left: 90px;
+	font-size: 20px;
 }
 
 
@@ -219,14 +255,15 @@ input:focus{
 	width: 100%;
 }
 .restInfoDesc{
-	font-size: 17px;
-	padding: 40px;
+	font-size: 23px;
+	padding: 10px;
+	width: 50%;
 }
 .dishes{
 	width: 100%;
 }
 .simpleDishesName{
-	margin: 5px 0% 20px 20%;
+	margin: 5px 0% 20px 10%;
 	font-size: 23px;
 	font-weight: 600;
 }
@@ -244,17 +281,23 @@ input:focus{
 .deliveryHave{
 	width: 50%;
 	display: flex;
+	margin-left: 60px;
+	margin-top: 10px;
 }
 .deliveryImg{
-	width: 25px;
-	margin-left: 10px;
+	width: 35px;
+	height: 35px;
+	margin-left: 20px;
 }
 .takeoutHave{
 	display: flex;
+	margin-left: 60px;
+	margin-top: 10px;
 }
 .takeoutImg{
-	width: 25px;
-	margin-left: 10px;
+	width: 35px;
+	height: 35px;
+	margin-left: 20px;
 }
 .rateName{
 	font-size: 30px;
@@ -411,22 +454,21 @@ input:focus{
 }
 
 
-.simpleDishes{
-	display: grid;
-	grid-gap: 10px;
+.simpleDishes2{
 	width: 80%;
-	grid-template-columns: repeat(auto-fill, minmax(200px, 200px));
+	display: flex;
 	margin-left: 10%;
 	margin-top: 20px;
 	margin-bottom: 20px;
+	border-bottom: 1px solid #BABABA;
+	padding-bottom: 40px;
 }
 .simpleDishBl{
 	border-radius: 5px;
-	border: 1px solid #BABABA;
+	width: 200px;
 }
 .simpleDishImg{
-	width: 80%;
-	margin-left: 10%;
+	width: 100%;
 	margin-top: 15px;
 	margin-bottom: 15px;
 	border-radius: 5px;
@@ -435,6 +477,29 @@ input:focus{
 	font-size: 18px;
 	margin-bottom: 10px;
 	text-align: center;
+}
+.toggleDishesLeft{
+	position: relative;
+	top: 60px;
+	width: 20px;
+	height: 20px;
+	padding: 10px;
+	border-radius: 100px;
+	background: white;
+	box-shadow: 0px 0px 5px black;
+	transform: rotate(180deg);
+	left: -10px;
+}
+.toggleDishesRight{
+	position: relative;
+	top: 60px;
+	width: 20px;
+	height: 20px;
+	padding: 10px;
+	border-radius: 100px;
+	background: white;
+	box-shadow: 0px 0px 5px black;
+	right: -10px;
 }
 .bestDishes{
 	display: grid;
@@ -448,7 +513,6 @@ input:focus{
 
 .addRestaurant{
 	width: 40px;
-	float: right;
 	cursor: pointer;
 	transition: all 0.2s ease;
 }
@@ -459,11 +523,12 @@ input:focus{
 	width: 220px;
 	color: red;
 	position: relative;
-	top: -30px;
+	top: -70px;
 	left: -80px;
 	opacity: 0;
 	transition: all 0.2s ease;
 	text-align: center;
+	z-index: -1;
 }
 
 
