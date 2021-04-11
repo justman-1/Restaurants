@@ -1,0 +1,241 @@
+body{
+	font-family: segoe ui;
+	background: #F0F0F0;
+}
+select,
+input{
+	border: 1px solid #D6D6D6;
+	border-radius: 5px;
+	width: 500px;
+	margin-left: 30px;
+	font-size: 20px;
+	transition: all 0.2s linear;
+}
+select,
+input:focus{
+	border: 1px solid #D6D6D6;
+	outline: none;
+	border-radius: 1px;
+}
+textarea{
+	border: 1px solid #D6D6D6;
+	border-radius: 5px;
+	width: 500px;
+	margin-left: 30px;
+	font-size: 20px;
+	transition: all 0.2s linear;
+	resize: none;
+	height: 80px;
+}
+textarea:focus{
+	border: 1px solid #D6D6D6;
+	outline: none;
+	border-radius: 1px;
+}
+.addRestSect{
+	width: 70%;
+	margin-left: 15%;
+	margin-top: 60px;
+	background: white;
+	border-radius: 10px
+}
+.addRestSectInside{
+	width: 90%;
+	margin-left: 5%;
+	padding-top: 1px;
+}
+.block{
+	width: 90%;
+	margin-left: 5%;
+	display: flex;
+	margin-top: 20px;
+	padding: 10px;
+}
+.mainBlock{
+	font-size: 30px;
+	margin-top: 30px;
+	text-align: center;
+	font-weight: 600;
+}
+.restNameSp{
+	margin-left: 10px;
+	font-size: 25px;
+	width: 250px;
+	text-align: right;
+}
+.restName{
+	display: block;
+}
+.deliveryCheck{
+	width: 30px;
+	transform: scale(2);
+	position: relative;
+	top: 10px;
+}
+.takeoutCheck{
+	width: 30px;
+	transform: scale(2);
+	position: relative;
+	top: 10px;
+}
+.restImageAdd{
+	opacity: 0.3;
+	width: 60px;
+	margin-top: 10px;
+	margin-left: 10px;
+	cursor: pointer;
+}
+.restImage{
+	border-radius: 7px;
+	width: 100px;
+	height: 60px;
+}
+.imagesAll{
+	margin-left: 30px;
+	width: 500px;
+	display: grid;
+	grid-gap: 10px;
+	grid-template-columns: repeat(auto-fill, minmax(100px, 100px));
+}
+.restImageAddFile{
+	display: none;
+}
+.divImg2{
+	width: 100px;
+	margin-top: 10px;
+	margin-left: 10px;
+	display: flex;
+}
+.deleteRestImage{
+	width: 20px;
+	height: 20px;
+	position: relative;
+	top: -10px;
+	left: -15px;
+	box-shadow: 0px 0px 5px black;
+	border-radius: 20px;
+	cursor: pointer;
+}
+.dishes{
+	width: 90%;
+	margin-left: 5%;
+	display: grid;
+	grid-gap: 10px;
+	grid-template-columns: repeat(auto-fill, minmax(100px, 100px));
+	margin-top: 20px;
+	padding: 10px;
+}
+.dishInfoAddImageFile{
+	display: none;
+}
+.dishInfoAddImage{
+	opacity: 0.3;
+	width: 60px;
+	margin-top: 10px;
+	margin-left: 10px;
+	cursor: pointer;
+}
+.dishInfo{
+	width: 50%;
+	padding: 20px;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	background: #F5F5F5;
+	border-radius: 10px;
+	margin-top: 40px;
+}
+.dishInfoSp{
+	font-size: 27px;
+	font-weight: 600;
+	text-align: center;
+	margin-bottom: 40px;
+
+}
+.dishInfoNameSp{
+	text-align: center;
+	font-size: 23px;
+	margin-bottom: 10px;
+	margin-top: 20px;
+}
+.dishInfoName{
+	width: 70%;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+.dishInfoDescription{
+	width: 80%;
+	height: 100px;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+.dishInfoAddImage{
+	width: 150px;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	border-radius: 7px;
+}
+.addDishBut{
+	font-size: 23px;
+	width: 50%;
+	text-align: center;
+	color: white;
+	background: #BDBDBD;
+	border-radius: 10px;
+	padding: 5px 0px 5px 0px;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 20px;
+	border: 1px solid #BDBDBD;
+	cursor: pointer;
+}
+.dishes{
+	width: 100%;
+	display: grid;
+	grid-gap: 10px;
+	grid-template-columns: repeat(auto-fill, minmax(170px, 170px));
+	margin-top: 20px;
+	min-height: 200px;
+}
+.dish{
+	width: 150px;
+	padding: 10px;
+	border-radius: 7px;
+	border: 1px solid #D1D1D1;
+}
+.dishImage{
+	width: 90%;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+.dishName{
+	font-size: 20px;
+	font-weight: 600;
+	text-align: center;
+	margin-top: 20px;
+}
+.dishCross{
+	float: right;
+	width: 20px;
+	position: relative;
+	top: -7px;
+	right: -7px;
+	cursor: pointer;
+}
+.restaurantAdd{
+	background: red;
+	color: white;
+	text-align: center;
+	width: 200px;
+	font-size: 25px;
+	padding: 6px;
+	border-radius: 10px;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}

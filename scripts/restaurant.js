@@ -644,10 +644,13 @@ $(".restInfoImgBl").width($(".restImBl").width() - 70)
 $(".toggleDishesRight").click(()=>{
 	if(thisRest.dishes.length > toggleIndex*5 && thisRest.dishes.length != toggleIndex*5){
 		for(i=0;i<document.querySelector(".simpleDishes").children.length;i++){
-			document.querySelector(".simpleDishes").removeChild(document.querySelector(".simpleDishes").children[i])
+			document.querySelector(".simpleDishes").children[i].style.display = 'none'
 		}
 		toggleIndex += 1
-		for(i=toggleIndex;i<toggleIndex + +5;i++){
+		console.log(toggleIndex)
+		console.log((toggleIndex*5)-5)
+		console.log((toggleIndex*5))
+		for(i=(toggleIndex*5)-5;i<toggleIndex*5;i++){
 			if(thisRest.dishes[i] != undefined){
 				$(".simpleDishes").append(`
             		<div class="simpleDishBl">
@@ -662,10 +665,13 @@ $(".toggleDishesRight").click(()=>{
 $(".toggleDishesLeft").click(()=>{
 	if(toggleIndex != 1){
 		for(i=0;i<document.querySelector(".simpleDishes").children.length;i++){
-			document.querySelector(".simpleDishes").removeChild(document.querySelector(".simpleDishes").children[i])
+			document.querySelector(".simpleDishes").children[i].style.display = 'none'
 		}
 		toggleIndex = toggleIndex - 1
-		for(i=toggleIndex;i<toggleIndex + +5;i++){
+		console.log(toggleIndex)
+		console.log((toggleIndex*5)-5)
+		console.log((toggleIndex*5))
+		for(i=(toggleIndex*5)-5;i<toggleIndex*5;i++){
 			if(thisRest.dishes[i] != undefined){
 				$(".simpleDishes").append(`
             		<div class="simpleDishBl">

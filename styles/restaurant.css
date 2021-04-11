@@ -465,7 +465,8 @@ input:focus{
 }
 .simpleDishBl{
 	border-radius: 5px;
-	width: 200px;
+	width: 19%;
+	margin-left: 10px;
 }
 .simpleDishImg{
 	width: 100%;
@@ -476,7 +477,8 @@ input:focus{
 .simpleDishName{
 	font-size: 18px;
 	margin-bottom: 10px;
-	text-align: center;
+	display: flex;
+	width: 800px;
 }
 .toggleDishesLeft{
 	position: relative;
@@ -687,4 +689,7 @@ input:focus{
 	width: 40px;
 	border-radius: 40px;
 	margin-left: 15px;
+}
+.simpleDishes2{
+	width: 100%;
 }

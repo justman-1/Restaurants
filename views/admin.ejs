@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="/admin.css">
+	<link rel="shortcut icon" href="/logo.png" type="image/png">
+	<title>Admin panel</title>
+</head>
+<body>
+	<section class='addRestSect'>
+		<section class='addRestSectInside'>
+			<div class="mainBlock">Main information:</div>
+			<div class='block'>
+				<div class='restNameSp'>Name of restaurant:</div>
+				<input class='restName' placeholder="Vilna">
+			</div>
+			<div class='block'>
+				<div class='restNameSp'>Cuisine:</div>
+				<select class='cuisineName'>
+					<option selected value="Russian">Russian</option>
+					<option value="Asian">Asian</option>
+					<option value="Italian">Italian</option>
+					<option value="European">European</option>
+					<option value="Belarusian">Belarusian</option>
+					<option value="Japanese">Japanese</option>
+					<option value="French">French</option>
+					<option value="Turkish">Turkish</option>
+				</select>
+			</div>
+			<div class='block'>
+				<div class='restNameSp'>Address:</div>
+				<input class='addressName' placeholder="Miroshnichenko, 1a">
+			</div>
+			<div class='block'>
+				<div class='restNameSp'>Delivery:</div>
+				<input class='deliveryCheck' placeholder="Vilna" type='checkbox'>
+			</div>
+			<div class='block'>
+				<div class='restNameSp'>Takeout:</div>
+				<input class='takeoutCheck' placeholder="Vilna" type='checkbox'>
+			</div>
+			<div class='block'>
+				<div class='restNameSp'>Description:</div>
+				<textarea class='descriptionName' placeholder="Restaurant Unter den Linden in..."></textarea>
+			</div>
+			<div class='block'>
+				<div class='restNameSp'>City:</div>
+				<input class='cityName' placeholder="London">
+			</div>
+			<div class='block'>
+				<div class='restNameSp'>Images of restaurant:</div>
+				<div class='imagesAll'>
+					<label>
+						<img src="/upload.svg" class='restImageAdd'>
+						<input type="file" class='restImageAddFile'>
+					</label>
+				</div>
+			</div>
+			<div class="mainBlock">Menu:</div>
+			<div class="dishInfo">
+				<div class='dishInfoSp'>Information about dish:</div>
+				<div class="dishInfoNameSp">Name:</div>
+				<input class="dishInfoName" type='text' placeholder="Name">
+				<div class="dishInfoNameSp">Description:</div>
+				<textarea class="dishInfoDescription" placeholder="Obelisk a small restaurant serving Italian food in..."></textarea>
+				<div class="dishInfoNameSp">Image:</div>
+				<div class="dishInfoImage">
+					<label>
+					    <img src="/upload.svg" class='dishInfoAddImage'>
+					    <input type="file" class='dishInfoAddImageFile'>
+				    </label>
+				</div>
+
+				<div class='addDishBut'>Add dish</div>
+			</div>
+			<div class="dishes">
+
+			</div>
+			<div class="restaurantAdd">Add restaurant</div>
+		</section>
+	</section>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src='/admin.js'></script></body>
+</html>
