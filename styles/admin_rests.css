@@ -1,0 +1,154 @@
+body{
+	font-family: segoe ui;
+	background: #F0F0F0; 
+}
+a{
+	text-decoration: none;
+}
+.optionsBut{
+	width: 40px;
+	position: absolute;
+	top: 10px;
+	left: 10px;
+	cursor: pointer;
+}
+.optionsBl{
+	width: 300px;
+	position: fixed;
+	height: 101%;
+	background: #FAFAFA;
+	top: 0px;
+	left: -305px;
+	transition: all 0.4s ease;
+}
+.optionsCross{
+	float: right;
+	width: 40px;
+	margin-right: 5px;
+	margin-top: 5px;
+	cursor: pointer;
+}
+.options{
+	margin-top: 30px;
+}
+.option{
+	font-size: 18px;
+	padding: 0px 0px 0px 40px;
+	text-align: left;
+	margin-top: 20px;
+	cursor: pointer;
+	transition: all 0.5s ease;
+	border-radius: 10px;
+	color: black;
+	text-decoration: none;
+}
+.option:hover{
+	padding-left: 55px;
+}
+.restsSect{
+	width: 70%;
+	margin-left: 15%;
+	margin-top: 60px;
+	background: white;
+	border-radius: 10px
+}
+.loading{
+	width: 40px;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	animation: loading 0.8s linear infinite;
+	position: relative;
+	top: 100px;
+}
+@keyframes loading{
+	0%{transform: rotate(359.99deg);}
+	100%{transform: rotate(0deg);}
+}
+
+.allRests{
+	padding: 20px 0px 30px 0px;
+	display: grid;
+	grid-gap: 4%;
+	margin-left: 4%;
+	width: 100%;
+	grid-template-columns: repeat(auto-fill, minmax(20%, 20%));
+	min-height: 200px;
+}
+.rest{
+	width: 100%;
+	border-radius: 10px;
+	border: 1px solid #D1D1D1;
+	padding: 10px 5px 10px 5px;
+	display: block;
+	margin: 10px auto 10px 0%;
+	padding-top: 10px;
+}
+.changeRestBut{
+	width: 25px;
+	margin: 0px 0px 0px 5px;
+	float: left;
+	cursor: pointer;
+}
+.deleteRestBut{
+	width: 25px;
+	margin: 0px 5px 0px 0px;
+	float: right;
+	cursor: pointer;
+}
+.changeOrDelete{
+	height: 20px;
+}
+.restImg{
+	width: 90%;
+	display: block;
+	margin: 20px auto 0px auto;
+	border-radius: 10px;
+}
+.restName{
+	font-size: 14px;
+	margin-top: 5px;
+	text-align: center;
+}
+.removeBlockName{
+	font-weight: 600;
+}
+.removeBlock{
+	width: 50%;
+	height: 300px;
+	border-radius: 10px;
+	padding-top: 40px;
+	padding-bottom: 40px;
+	background: white;
+	position: fixed;
+	top: -405px;
+	left: 25%;
+	border: 1px solid red;
+	transition: all 0.5s ease;
+}
+.removeBlockCancel{
+	margin-top: 100px;
+	background: white;
+	width: 60%;
+	margin-left: 18%;
+	border-radius: 10px;
+	border: 1px solid red;
+	padding: 5px 0px 5px 0px;
+	text-align: center;
+	color: red;
+	font-size: 20px;
+	cursor: pointer;
+}
+.removeBlockBut{
+	background: red;
+	width: 60%;
+	margin-left: 18%;
+	border-radius: 10px;
+	border: 1px solid red;
+	padding: 5px 0px 5px 0px;
+	text-align: center;
+	margin-top: 20px;
+	color: white;
+	font-size: 20px;
+	cursor: pointer;
+}

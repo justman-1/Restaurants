@@ -32,6 +32,9 @@ textarea:focus{
 	outline: none;
 	border-radius: 1px;
 }
+a{
+	text-decoration: none;
+}
 .addRestSect{
 	width: 70%;
 	margin-left: 15%;
@@ -115,6 +118,7 @@ textarea:focus{
 	box-shadow: 0px 0px 5px black;
 	border-radius: 20px;
 	cursor: pointer;
+	background: white;
 }
 .dishes{
 	width: 90%;
@@ -238,4 +242,46 @@ textarea:focus{
 	display: block;
 	margin-left: auto;
 	margin-right: auto;
+}
+
+
+.optionsBut{
+	width: 40px;
+	position: absolute;
+	top: 10px;
+	left: 10px;
+	cursor: pointer;
+}
+.optionsBl{
+	width: 300px;
+	position: fixed;
+	height: 101%;
+	background: #FAFAFA;
+	top: 0px;
+	left: -305px;
+	transition: all 0.4s ease;
+}
+.optionsCross{
+	float: right;
+	width: 40px;
+	margin-right: 5px;
+	margin-top: 5px;
+	cursor: pointer;
+}
+.options{
+	margin-top: 30px;
+}
+.option{
+	font-size: 18px;
+	padding: 0px 0px 0px 40px;
+	text-align: left;
+	margin-top: 20px;
+	cursor: pointer;
+	transition: all 0.5s ease;
+	border-radius: 10px;
+	color: black;
+	text-decoration: none;
+}
+.option:hover{
+	padding-left: 55px;
 }

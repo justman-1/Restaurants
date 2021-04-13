@@ -112,6 +112,15 @@ function getRest(){
 	            	'margin-left': '16.6%',
 	            	'width': '73%'
 	            })
+	            $(".simpleDishesName").css({
+	            	'margin-left': '17%'
+	            })
+	            $(".simpleDishes").css({
+	            	'width': '68%'
+	            })
+	            $(".simpleDishes2").css({
+	            	'margin-left': '17%'
+	            })
             }
             for(i=0;i<5;i++){
             	if(thisRest.dishes[i] != undefined){
@@ -152,6 +161,12 @@ function getRest(){
 							</div>
 							<div class="rewDate">${e.date}</div>
 						</div>`)
+            	if(thisRest.images.length == 1){
+            		$(".review").css({
+	            	    'width': '75%',
+	            	    'margin-left': '17%'
+	                })
+            	}
             })
         }
     }

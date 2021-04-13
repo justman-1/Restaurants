@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Admin panel</title>
+	<link rel="stylesheet" type="text/css" href="/admin_rests.css">
+</head>
+<body>
+	<img src="/options.svg" class='optionsBut'>
+
+	<div class="optionsBl">
+		<div style='height: 40px'><img src="/cross3.png" class='optionsCross'></div>
+		<div class="options">
+			<a href='/admin_panel'><div class="option">Make new restaurant</div></a>
+			<div class="option">View all restaurants</div>
+		</div>
+	</div>
+
+	<div class="removeBlock">
+		<div class="removeBlockCancel">Cancel</div>
+		<div class="removeBlockBut">Remove restaurant "<span class='removeBlockName'></span>"</div>
+	</div>
+
+	<section class='restsSect'>
+		<img src="/reset.svg" class='loading'>
+		<div class="allRests">
+			
+		</div>
+	</section>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src='/admin_rests.js'></script></body>
+</html>

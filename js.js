@@ -486,3 +486,97 @@ app.post('/addRestaurant', (req, res)=>{
 		res.send('ok')
 	})
 })
+
+app.get('/admin_panel', (req, res)=>{
+	res.render('admin')
+})
+
+app.post('/addRestaurant', (req, res)=>{
+	let data = req.body
+	let rest = new Restaurant({
+		name: data.name,
+        city: data.city,
+        cuisine: data.cuisine,
+        rating: 0,
+        description: data.description,
+        dishes: data.dishes,
+        bestDishes: data.bestDishes,
+        images: data.images,
+        address: data.address,
+        reviews: data.reviews,
+        delivery: data.delivery,
+        takeout: data.takeout,
+	})
+	rest.save(()=>{
+		res.send('ok')
+	})
+})
+
+app.get('/admin_panel/restaurants', (req, res)=>{
+	res.render('admin_rests')
+})
+
+app.get("/getRests2", (req, res)=>{
+	Restaurant.find({}, (err, docs)=>{
+		async function f1(){
+			let result = []
+			let getResult = new Promise((resolve, rej)=>{
+				for(i=0;i<docs.length;i++){
+					result.push({name: docs[i].name, image: docs[i].images[0]})
+					if(i == docs.length - 1){
+						resolve(result = result)
+					}
+				}
+			})
+			let result2 = await getResult
+			res.send(JSON.stringify(result2))
+		}
+		f1()
+	})
+})
+
+app.get('/removeRest', (req, res)=>{
+	let name = req.headers['name']
+	Restaurant.deleteOne({name: name}, ()=>{
+		Restaurant.find({}, (err, docs)=>{
+		async function f1(){
+			let result = []
+			let getResult = new Promise((resolve, rej)=>{
+				for(i=0;i<docs.length;i++){
+					result.push({name: docs[i].name, image: docs[i].images[0]})
+					if(i == docs.length - 1){
+						resolve(result = result)
+					}
+				}
+			})
+			let result2 = await getResult
+			res.send(JSON.stringify(result2))
+		}
+		f1()
+	    })
+	})
+})
+
+app.get("/admin_panel/change_restaurant", (req, res)=>{
+	res.render('changeRest')
+})
+
+app.post('/changeRestaurant', jsonParser, (req, res)=>{
+	let data = req.body
+	console.log(data.name)
+	Restaurant.updateOne({name: data.name}, {
+		name: data.name2,
+		city: data.city,
+        cuisine: data.cuisine,
+        rating: 0,
+        description: data.description,
+        dishes: data.dishes,
+        bestDishes: data.bestDishes,
+        images: data.images,
+        address: data.address,
+        reviews: data.reviews,
+        delivery: data.delivery,
+        takeout: data.takeout}, ()=>{
+        	res.send('ok')
+        })
+})

@@ -263,7 +263,7 @@ input:focus{
 	width: 100%;
 }
 .simpleDishesName{
-	margin: 5px 0% 20px 10%;
+	margin: 5px 0% 20px 14%;
 	font-size: 23px;
 	font-weight: 600;
 }
@@ -311,8 +311,8 @@ input:focus{
 	margin-top: 40px;
 }
 .review{
-	width: 80%;
-	margin-left: 10%;
+	width: 74.5%;
+	margin-left: 12%;
 	margin-top: 30px;
 	border-radius: 5px;
 	border: 1px solid #BABABA;
@@ -455,12 +455,10 @@ input:focus{
 
 
 .simpleDishes2{
-	width: 80%;
 	display: flex;
-	margin-left: 10%;
+	margin-left: 13%;
 	margin-top: 20px;
 	margin-bottom: 20px;
-	border-bottom: 1px solid #BABABA;
 	padding-bottom: 40px;
 }
 .simpleDishBl{
@@ -692,4 +690,7 @@ input:focus{
 }
 .simpleDishes2{
 	width: 100%;
+}
+.dishes{
+	border-bottom: 0px solid white;
 }
