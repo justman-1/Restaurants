@@ -21,7 +21,6 @@ app.use(express.static(__dirname))
 app.use(bodyParser.json({ limit: "50mb" }))
 app.use(bodyParser.urlencoded({ limit: "50mb", extended: true, parameterLimit: 50000 }))
 app.set('view engine', 'ejs')
-app.listen(3000)
 
 
 const mongoose = require("mongoose")
@@ -38,6 +37,7 @@ let connectToMongoDb = async () => {
 	})
 }
 connectToMongoDb()
+console.log('check')
 
 class Review{
 	constructor(userName, text, date, mark, logo, photoes){
