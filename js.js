@@ -478,32 +478,7 @@ app.post('/addRestaurant', (req, res)=>{
         bestDishes: data.bestDishes,
         images: data.images,
         address: data.address,
-        reviews: data.reviews,
-        delivery: data.delivery,
-        takeout: data.takeout,
-	})
-	rest.save(()=>{
-		res.send('ok')
-	})
-})
-
-app.get('/admin_panel', (req, res)=>{
-	res.render('admin')
-})
-
-app.post('/addRestaurant', (req, res)=>{
-	let data = req.body
-	let rest = new Restaurant({
-		name: data.name,
-        city: data.city,
-        cuisine: data.cuisine,
-        rating: 0,
-        description: data.description,
-        dishes: data.dishes,
-        bestDishes: data.bestDishes,
-        images: data.images,
-        address: data.address,
-        reviews: data.reviews,
+        reviews: [],
         delivery: data.delivery,
         takeout: data.takeout,
 	})
